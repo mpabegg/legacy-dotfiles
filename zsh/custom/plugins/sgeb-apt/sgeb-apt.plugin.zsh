@@ -1,8 +1,5 @@
 # Aliases and functions for apt related tasks
 
-# only if aptitude avail
-[[ -z "$(which aptitude)" ]] && return
-
 
 # Aliases ###################################################################
 # Some self-explanatory aliases

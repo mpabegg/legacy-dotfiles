@@ -1,13 +1,15 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+
+# Path to override the default ZSH custom directory
 ZSH_CUSTOM=$(dirname $(readlink -f ${ZDOTDIR-~}/.zshrc))/custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-ZSH_THEME="blinks"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="blinks"
 ZSH_THEME="kphoen"
 
 # Example aliases
@@ -32,7 +34,12 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(sgeb-apt git git-flow extract)
+plugins=(git git-flow extract)
+
+# OS specific plugins
+OS=$(uname -s)
+[[ "$OS" = "Linux" ]] && plugins+=(sgeb-apt)
+[[ "$OS" = "Darwin" ]] && plugins+=(osx mate)
 
 source $ZSH/oh-my-zsh.sh
 
