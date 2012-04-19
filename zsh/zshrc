@@ -4,6 +4,20 @@ OS=$(uname -s)
 # Set the PATH
 export PATH=~/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
+# Should we start tmux?
+[[ "$OS" = "Linux" ]] && ZSH_USE_TMUX=true
+
+# Start tmux
+if [ "$ZSH_USE_TMUX" = "true" ]; then
+  if [ -z "$TMUX" ]; then
+    if tmux ls 2> /dev/null | grep -v '(attached)$'; then
+        tmux attach && exit 0
+    else
+        tmux -2 && exit 0
+    fi
+  fi
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -31,8 +45,11 @@ ZSH_THEME="kphoen"
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Uncomment following line if you want to disable autosetting terminal
+# title.
+# Do no update title if on linux and outside tmux, needed for the
+# system-wide console hotkey (xdotool checks the window title)
+[[ "$OS" = "Linux" && -z "$TMUX" ]] && DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
