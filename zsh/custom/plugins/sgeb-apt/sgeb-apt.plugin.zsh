@@ -14,11 +14,10 @@ alias aptr='sudo aptitude remove'
 alias aptp='sudo aptitude purge'
 alias apts='aptitude search'
 alias aptsh='aptitude show'
+alias aptsp='apt-cache showpkg'
 alias afu='apt-file update'
 alias afs='apt-file search --regexp'
 alias afl='apt-file list'
-
-alias aptigrep='dpkg -l'
 
 
 # Functions #################################################################
