@@ -1,14 +1,8 @@
-# For OS specific configurations
-OS=$(uname -s)
-
-# Set the PATH
-export PATH=~/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-
 # Should we start tmux?
-[[ "$OS" = "Linux" ]] && ZSH_USE_TMUX=true
+ZSH_USE_TMUX=$FULLSCREEN_TERMINAL
 
 # Start tmux
-if [ "$ZSH_USE_TMUX" = "true" ]; then
+if [ -n "$ZSH_USE_TMUX" ]; then
   if [ -z "$TMUX" ]; then
     if tmux ls 2> /dev/null | grep -v '(attached)$'; then
         tmux attach && exit 0
@@ -17,6 +11,20 @@ if [ "$ZSH_USE_TMUX" = "true" ]; then
     fi
   fi
 fi
+
+# For OS specific configurations
+OS=$(uname -s)
+
+# Set the PATH
+export PATH=~/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+# Fix SSH_AUTH_SOCK when called from gnome shortcut key
+# See https://bugzilla.redhat.com/show_bug.cgi?id=713955
+if [ "$OS" = "Linux" ]; then
+  SSH_AUTH_SOCK=`netstat -xl | grep -o '/tmp/keyring-.*/ssh$'`
+  [ -n "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+fi
+
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
