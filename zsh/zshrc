@@ -1,5 +1,8 @@
+# For OS specific configurations
+OS=$(uname -s)
+
 # Should we start tmux?
-ZSH_USE_TMUX=$FULLSCREEN_TERMINAL
+[[ "$OS" = "Linux" && -n "$FULLSCREEN_TERMINAL" ]] && ZSH_USE_TMUX=yes
 
 # Start tmux
 if [ -n "$ZSH_USE_TMUX" ]; then
@@ -11,9 +14,6 @@ if [ -n "$ZSH_USE_TMUX" ]; then
     fi
   fi
 fi
-
-# For OS specific configurations
-OS=$(uname -s)
 
 # Set the PATH
 export PATH=~/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
