@@ -51,8 +51,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(matlab-functions-have-end t)
+ '(matlab-indent-function-body t)
  '(matlab-highlight-cross-function-variables t)
- '(matlab-return-add-semicolon t)
  '(matlab-shell-command "matlab")
  '(matlab-shell-command-switches (quote ("-nodesktop -nosplash -nojvm")))
  '(matlab-show-mlint-warnings t)
