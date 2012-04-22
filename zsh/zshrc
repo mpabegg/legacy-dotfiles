@@ -69,6 +69,6 @@ plugins=(git git-flow extract)
 
 # OS specific plugins
 [[ "$OS" = "Linux" ]] && plugins+=(sgeb-apt)
-#[[ "$OS" = "Darwin" ]] && plugins+=(osx mate)
+[[ "$OS" = "Darwin" ]] && plugins+=(brew) #(osx mate)
 
 source $ZSH/oh-my-zsh.sh
