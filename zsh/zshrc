@@ -16,7 +16,7 @@ if [ -n "$ZSH_USE_TMUX" ]; then
 fi
 
 # Set the PATH
-export PATH=~/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=~/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Fix SSH_AUTH_SOCK when called from gnome shortcut key
 # See https://bugzilla.redhat.com/show_bug.cgi?id=713955
