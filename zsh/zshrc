@@ -2,7 +2,8 @@
 OS=$(uname -s)
 
 # Should we start tmux?
-[[ "$OS" = "Linux" && -n "$FULLSCREEN_TERMINAL" ]] && ZSH_USE_TMUX=yes
+#[[ "$OS" = "Linux" && -n "$FULLSCREEN_TERMINAL" ]] && ZSH_USE_TMUX=yes
+ZSH_USE_TMUX=yes
 
 # Start tmux
 if [ -n "$ZSH_USE_TMUX" ]; then
