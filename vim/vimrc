@@ -28,6 +28,12 @@
 "           info -> :help CommandT
 "           screencast and web-help -> http://amix.dk/blog/post/19501
 
+" TODO, look into:
+" - set smartindent
+" - tabstop=4
+" - shiftwidth=4
+" - expandtab
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -117,8 +123,8 @@ if has("gui_running")
   colorscheme peaksea
   set nonu
 else
-  colorscheme zellner
-  set background=dark
+  colorscheme default
+  "set background=dark
 
   set nonu
 endif
