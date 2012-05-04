@@ -14,6 +14,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✱%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[red]%}λ%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_STATE_NA="%{$fg_bold[black]%}?%{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
@@ -85,11 +86,12 @@ function git_time_since_commit() {
 }
 
 PROMPT='
-[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(sgeb_git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha)%{$PROMPT_GIT%}]
+[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(sgeb_git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha)]
 $(prompt_char) '
 
-#if sgeb_should_show_git_details; then
-#    RPROMPT_GIT="$(git_time_since_commit)$(git_prompt_status)"
-#fi
+function rprompt_git() {
+    [ "$(sgeb_git_prompt_level)" = "2" ] && echo "$(git_time_since_commit)$(git_prompt_status)"
+}
 
-RPROMPT='${return_status}%{$RPROMPT_GIT%}%{$reset_color%}'
+RPROMPT='${return_status}$(rprompt_git)%{$reset_color%}'
+
