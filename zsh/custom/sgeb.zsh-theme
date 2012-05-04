@@ -85,7 +85,11 @@ function git_time_since_commit() {
 }
 
 PROMPT='
-[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha)]
+[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(sgeb_git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha)%{$PROMPT_GIT%}]
 $(prompt_char) '
 
-RPROMPT='${return_status}$(git_time_since_commit)$(git_prompt_status)%{$reset_color%}'
+#if sgeb_should_show_git_details; then
+#    RPROMPT_GIT="$(git_time_since_commit)$(git_prompt_status)"
+#fi
+
+RPROMPT='${return_status}%{$RPROMPT_GIT%}%{$reset_color%}'
