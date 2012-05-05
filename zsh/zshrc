@@ -2,23 +2,20 @@
 OS=$(uname -s)
 
 # Should we start tmux?
-#[[ "$OS" = "Linux" && -n "$FULLSCREEN_TERMINAL" ]] && ZSH_USE_TMUX=yes
-ZSH_USE_TMUX=yes
+[[ -n "$FULLSCREEN_TERMINAL" ]] && ZSH_USE_TMUX=yes
 
 # Start tmux
-if [ -n "$ZSH_USE_TMUX" ]; then
-  if [ -z "$TMUX" ]; then
-    if tmux ls 2> /dev/null | grep -v '(attached)$'; then
-        tmux attach && exit 0
-    else
-        tmux -2 && exit 0
-    fi
+if [ -n "$ZSH_USE_TMUX" -a -z "$TMUX" ]; then
+  if tmux ls 2> /dev/null | grep -v '(attached)$' > /dev/null; then
+      tmux attach && exit 0
+  else
+      tmux -2 && exit 0
   fi
 fi
 
 # Set the PATH
-PATH=
-for p in /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin ~/usr/bin; do
+PATH=/sbin:/bin
+for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin ~/usr/bin; do
   [ -d $p ] && PATH=$p:$PATH
 done
 export PATH
