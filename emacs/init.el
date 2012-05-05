@@ -1,3 +1,15 @@
+(windmove-default-keybindings)
+
+(defun frame-bck()
+  (interactive)
+  (other-window -1)
+)
+(define-key (current-global-map) (kbd "M-o") 'other-window)
+(define-key (current-global-map) (kbd "M-O") 'frame-bck)
+
+
+
+
 ;; Set the user directory - hardcoded because otherwise Aquamacs sets
 ;; it to ~/Library/Prefereces/Aquamacs Emacs/ and thus breaking package
 ;; loading from this script.
