@@ -11,6 +11,8 @@
 (setq require-final-newline t)
 
 
+; End matlab function with the end keyword
+(setq matlab-functions-have-end t)
 
 
 ;; Set the user directory - hardcoded because otherwise Aquamacs sets
