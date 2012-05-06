@@ -9,7 +9,7 @@
 # Consult ~/.zsh-git-quick-prompt to return level
 function sgeb_git_prompt_level() {
     local ign_file="$HOME/.zsh-git-quick-prompt"
-    local dir=${1:-$(pwd)}
+    local dir="${1:-$(pwd)}"
 
     [ "$dir[1]" != "/" ] && dir="$(pwd)/$dir"
     
