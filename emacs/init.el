@@ -7,6 +7,9 @@
 (define-key (current-global-map) (kbd "M-o") 'other-window)
 (define-key (current-global-map) (kbd "M-O") 'frame-bck)
 
+; Add a final newline on save if there isn't already one there
+(setq require-final-newline t)
+
 
 
 
