@@ -44,15 +44,14 @@ fi
 # Start tmux (if not already started)
 if [[ -z "$TMUX" && $ZSH_USE_TMUX > 0 ]]; then
   if [[ $ZSH_USE_TMUX = 2 ]]; then
-    tmux_shared 'shared'
+    tmux_shared 'shared' && exit $?
   elif [[ $ZSH_USE_TMUX = 1 ]]; then
     if tmux ls 2> /dev/null | grep -v '(attached)$' > /dev/null; then
-      tmux attach
+      tmux attach && exit $?
     else
-      tmux -2
+      tmux -2 && exit $?
     fi
   fi
-  exit $?
 fi
 
 # Path to your oh-my-zsh configuration.
