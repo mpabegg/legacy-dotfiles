@@ -14,7 +14,22 @@
 # For OS specific configurations
 OS=$(uname -s)
 
-# Should we start tmux? Values
+# Set the PATH
+PATH=/sbin:/bin
+for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin ~/usr/bin; do
+  [ -d $p ] && PATH=$p:$PATH
+done
+export PATH
+
+# Fix SSH_AUTH_SOCK when called from gnome shortcut key
+# See https://bugzilla.redhat.com/show_bug.cgi?id=713955
+if [ "$OS" = "Linux" ]; then
+  SSH_AUTH_SOCK=`netstat -xl | grep -o '/tmp/keyring-.*/ssh$'`
+  [ -n "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+fi
+
+# Should we start tmux?
+# Values of ZSH_USE_TMUX:
 # * 0: don't start tmux
 # * 1: attach to first deattached tmux, or create new one
 # * 2: attach to first tmux (multiple clients share same tmux)
@@ -39,21 +54,6 @@ if [[ -z "$TMUX" && $ZSH_USE_TMUX > 0 ]]; then
   fi
   exit $?
 fi
-
-# Set the PATH
-PATH=/sbin:/bin
-for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin ~/usr/bin; do
-  [ -d $p ] && PATH=$p:$PATH
-done
-export PATH
-
-# Fix SSH_AUTH_SOCK when called from gnome shortcut key
-# See https://bugzilla.redhat.com/show_bug.cgi?id=713955
-if [ "$OS" = "Linux" ]; then
-  SSH_AUTH_SOCK=`netstat -xl | grep -o '/tmp/keyring-.*/ssh$'`
-  [ -n "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
-fi
-
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
