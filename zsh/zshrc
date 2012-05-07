@@ -1,16 +1,43 @@
+# This file is shared across all environments:
+# * on linux workstations the shortcut M-Esc is bound to:
+#     toggle-window -n fullscreen-terminal \
+#       -c "gnome-terminal --full-screen --hide-menubar \
+#       --working-directory=~ -t fullscreen-terminal -e \
+#       'env FULLSCREEN_TERMINAL=y zsh'"
+#   and normal terminal run windowed without \
+#   FULLSCREEN_TERMINAL being set.
+# * on linux servers the shell variable $SSH_TTY is non-empty.
+# * on osx the shortcut M-Esc is bound to a fullscreen
+#   instance of iTerm2 (still need to find a way to set
+#   FULLSCREEN_TERMINAL in that setup).
+
 # For OS specific configurations
 OS=$(uname -s)
 
-# Should we start tmux?
-[[ -n "$FULLSCREEN_TERMINAL" ]] && ZSH_USE_TMUX=yes
+# Should we start tmux? Values
+# * 0: don't start tmux
+# * 1: attach to first deattached tmux, or create new one
+# * 2: attach to first tmux (multiple clients share same tmux)
+if [[ -n "$SSH_TTY" ]]; then
+    ZSH_USE_TMUX=2
+elif [[ -n "$FULLSCREEN_TERMINAL" ]]; then
+    ZSH_USE_TMUX=1
+else
+    ZSH_USE_TMUX=0
+fi
 
-# Start tmux
-if [ -n "$ZSH_USE_TMUX" -a -z "$TMUX" ]; then
-  if tmux ls 2> /dev/null | grep -v '(attached)$' > /dev/null; then
-      tmux attach && exit 0
-  else
-      tmux -2 && exit 0
+# Start tmux (if not already started)
+if [[ -z "$TMUX" && $ZSH_USE_TMUX > 0 ]]; then
+  if [[ $ZSH_USE_TMUX = 2 ]]; then
+    tmux_shared 'shared'
+  elif [[ $ZSH_USE_TMUX = 1 ]]; then
+    if tmux ls 2> /dev/null | grep -v '(attached)$' > /dev/null; then
+      tmux attach
+    else
+      tmux -2
+    fi
   fi
+  exit $?
 fi
 
 # Set the PATH
