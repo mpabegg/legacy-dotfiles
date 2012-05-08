@@ -18,10 +18,12 @@ function sgeb_git_prompt_level() {
         return
     fi
 
-    if grep "^${dir%/}/\?\$" "${ign_file}" >/dev/null 2>&1; then
-        echo "1"
-        return
-    fi
+    while read p; do
+        if echo "${dir%/}/" | grep "^${p%/}/\?" >/dev/null 2>&1; then
+            echo "1"
+            return
+        fi
+    done < "${ign_file}"
 
     echo "2"
     return
