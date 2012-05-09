@@ -2,13 +2,13 @@
 
 filetype off
 
-let vundleFirstInstall=0
+let isVundleFirstInstall=0
 if !filereadable(expand('~/.vim/bundle/vundle/README.md'))
     echo "Installing Vundle.."
     echo ""
     silent !mkdir -p ~/.vim/bundle
     silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let vundleFirstInstall=1
+    let isVundleFirstInstall=1
 endif
 
 set rtp+=~/.vim/bundle/vundle/
@@ -21,17 +21,22 @@ Bundle 'gmarik/vundle'
 " more bundles
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
 
-"Bundle 'Syntastic' "uber awesome syntax and errors highlighter
+"Bundle 'rstacruz/sparkup'
+"Bundle 'wincent/Command-T'
 "Bundle 'altercation/vim-colors-solarized'
-"Bundle 'https://github.com/tpope/vim-fugitive'
 
-if vundleFirstInstall == 1
+if isVundleFirstInstall == 1
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
     :BundleInstall
 endif
 
-unlet vundleFirstInstall
+unlet isVundleFirstInstall
 
 filetype plugin indent on
