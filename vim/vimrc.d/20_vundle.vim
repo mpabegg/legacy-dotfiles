@@ -29,7 +29,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'sgeb/vim-matlab'
-Bundle 'ibbo/mlint.vim'
 Bundle 'djoshea/vim-matlab-fold'
 Bundle 'ervandew/supertab'
 
