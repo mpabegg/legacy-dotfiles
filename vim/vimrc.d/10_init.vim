@@ -109,15 +109,15 @@ set tm=500
 syntax enable "Enable syntax hl
 
 " Set font according to system
-if MySys() == "mac"
-  set gfn=Menlo:h14
-  set shell=/bin/bash
-elseif MySys() == "windows"
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
-elseif MySys() == "linux"
-  set gfn=Monospace\ 10
-  set shell=/bin/bash
-endif
+"if MySys() == "mac"
+"  set gfn=Menlo:h14
+"  set shell=/bin/bash
+"elseif MySys() == "windows"
+"  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
+"elseif MySys() == "linux"
+"  set gfn=Monospace\ 10
+"  set shell=/bin/bash
+"endif
 
 if has("gui_running")
   set guioptions-=T
@@ -151,11 +151,11 @@ set noswapfile
 
 "Persistent undo
 try
-    if MySys() == "windows"
-      set undodir=C:\Windows\Temp
-    else
+"    if MySys() == "windows"
+"      set undodir=C:\Windows\Temp
+"    else
       set undodir=~/.vim_runtime/undodir
-    endif
+"    endif
 
     set undofile
 catch
@@ -253,17 +253,17 @@ endfunc
 
 func! DeleteTillSlash()
   let g:cmd = getcmdline()
-  if MySys() == "linux" || MySys() == "mac"
+"  if MySys() == "linux" || MySys() == "mac"
     let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
-  else
-    let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
-  endif
+"  else
+"    let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
+"  endif
   if g:cmd == g:cmd_edited
-    if MySys() == "linux" || MySys() == "mac"
+"    if MySys() == "linux" || MySys() == "mac"
       let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
-    else
-      let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
-    endif
+"    else
+"      let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
+"    endif
   endif
   return g:cmd_edited
 endfunc
@@ -403,12 +403,12 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-if MySys() == "mac"
+"if MySys() == "mac"
   nmap <D-j> <M-j>
   nmap <D-k> <M-k>
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
-endif
+"endif
 
 "Delete trailing white space, useful for Python ;)
 func! DeleteTrailingWS()
