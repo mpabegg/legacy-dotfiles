@@ -1,5 +1,6 @@
 " Vundle stuff, install automatically if not available
 
+filetype on   " required by OSX
 filetype off
 
 let isVundleFirstInstall=0
@@ -26,6 +27,11 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'sgeb/vim-matlab'
+Bundle 'ibbo/mlint.vim'
+Bundle 'djoshea/vim-matlab-fold'
+Bundle 'ervandew/supertab'
 
 "Bundle 'rstacruz/sparkup'
 "Bundle 'wincent/Command-T'
