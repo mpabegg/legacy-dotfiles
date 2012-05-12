@@ -123,10 +123,10 @@ if has("gui_running")
   set guioptions-=T
   set t_Co=256
   set background=dark
-  colorscheme peaksea
+  "colorscheme peaksea
   set nonu
 else
-  colorscheme default
+  "colorscheme default
   "set background=dark
 
   set nonu

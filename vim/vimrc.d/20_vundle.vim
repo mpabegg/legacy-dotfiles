@@ -31,6 +31,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'sgeb/vim-matlab'
 Bundle 'djoshea/vim-matlab-fold'
 Bundle 'ervandew/supertab'
+Bundle 'Conque-Shell'
 
 "Bundle 'rstacruz/sparkup'
 "Bundle 'wincent/Command-T'
