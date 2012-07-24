@@ -97,6 +97,9 @@ Bundle 'tpope/vim-unimpaired'
 " Enable repeating supported plugin maps with "."
 Bundle 'tpope/vim-repeat'
 
+" Maintains a history of previous yanks, changes and deletes
+Bundle 'YankRing.vim'
+
 " Easily search for, substitute, and abbreviate multiple variants of a word
 "Bundle 'tpope/vim-abolish'
 

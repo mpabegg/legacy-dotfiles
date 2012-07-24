@@ -7,14 +7,6 @@
 "       Makes it easy to switch between buffers:
 "           info -> :help bufExplorer
 "
-"     > yankring.vim - http://www.vim.org/scripts/script.php?script_id=1234
-"       Emacs's killring, useful when using the clipboard:
-"           info -> :help yankring
-"
-"     > surround.vim - http://www.vim.org/scripts/script.php?script_id=1697
-"       Makes it easy to work with surrounding text:
-"           info -> :help surround
-"
 "     > snipMate.vim - http://www.vim.org/scripts/script.php?script_id=2540
 "       Snippets for many languages (similar to TextMate's):
 "           info -> :help snipMate
@@ -41,7 +33,7 @@ set nocompatible
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
-set history=700
+set history=1000
 
 " Enable filetype plugin
 filetype plugin on
@@ -69,7 +61,7 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the curors - when moving vertical..
-set so=7
+set scrolloff=7
 
 set wildmenu "Turn on WiLd menu
 
@@ -77,7 +69,7 @@ set ruler "Always show current position
 
 set cmdheight=1 "The commandbar height
 
-set hid "Change buffer - without saving
+set hidden "Change buffer - without saving
 
 " Set backspace config
 set backspace=eol,start,indent
@@ -279,7 +271,7 @@ endfunc
 " Map space to / (search) and c-space to ? (backgwards search)
 map <space> /
 map <c-space> ?
-map <silent> <leader><cr> :noh<cr>
+map <silent> <leader><cr> :nohlsearch<cr>
 
 " Smart way to move btw. windows
 map <C-j> <C-W>j
@@ -556,3 +548,18 @@ au BufRead,BufNewFile ~/buffer iab <buffer> xh1 ================================
 map <leader>pp :setlocal paste!<cr>
 
 map <leader>bb :cd ..<cr>
+
+" SG
+" let vim set the terminal's title
+set title
+
+" scroll the viewport 3 lines at once
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" make tabs and trailing spaces visible when requested
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+
+" shorten command-line text and hide startup screen on empty buffer
+set shortmess=atI
