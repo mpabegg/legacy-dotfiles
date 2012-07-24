@@ -16,7 +16,7 @@ OS=$(uname -s)
 
 # Set the PATH
 PATH=/sbin:/bin
-for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin ~/usr/bin; do
+for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/local/git/bin ~/usr/bin; do
   [ -d $p ] && PATH=$p:$PATH
 done
 export PATH
@@ -74,7 +74,8 @@ ZSH_THEME="sgeb"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+# Disabled, causes slow starts of zsh
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
