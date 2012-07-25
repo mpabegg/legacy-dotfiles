@@ -6,3 +6,5 @@ autocmd BufEnter *.m compiler mlint
 "
 "autocmd BufLeave *.m    unmap <M-n> 
 "autocmd BufLeave *.m    unmap <M-p> 
+
+autocmd BufEnter *.m set commentstring=\%\ %s

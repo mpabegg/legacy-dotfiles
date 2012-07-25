@@ -6,6 +6,12 @@
 " required! 
 Bundle 'gmarik/vundle'
 
+" Adds a bundles menu, revealing your bundles/plugins and the features
+" they provide.
+" README at https://github.com/mbadran/headlights
+" Requires vim with python support (vim --version | grep "+python")
+"Bundle 'mbadran/headlights'
+
 " A clone of TextMate's twilight colorscheme
 Bundle 'matthewtodd/vim-twilight'
 
@@ -47,6 +53,9 @@ Bundle 'Lokaltog/vim-easymotion'
 " README at https://github.com/Lokaltog/vim-powerline/
 Bundle 'Lokaltog/vim-powerline'
 
+" Makes it easy to zoom into and out of a window
+Bundle 'ZoomWin'
+
 " Matlab bundles
 Bundle 'sgeb/vim-matlab'
 Bundle 'djoshea/vim-matlab-fold'
@@ -57,7 +66,8 @@ Bundle 'ervandew/supertab'
 
 " Allows you to run interactive programs inside vim.
 " README at https://github.com/vim-scripts/Conque-Shell
-Bundle 'Conque-Shell'
+" Requires vim with python support (vim --version | grep "+python")
+"Bundle 'Conque-Shell'
 
 " Text-object motion for CamelCaseWords
 " <cmd>i,w
@@ -110,5 +120,5 @@ Bundle 'YankRing.vim'
 " The Command-T plug-in provides an extremely fast, intuitive mechanism for
 " opening files and buffers with a minimal number of keystrokes.
 " README at https://github.com/wincent/Command-T
-" Requires vim with ruby-support (vim --version | grep "+ruby")
-"Bundle 'wincent/Command-T'
+" Requires vim with ruby support (vim --version | grep "+ruby")
+Bundle 'wincent/Command-T'

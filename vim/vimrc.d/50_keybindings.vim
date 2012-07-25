@@ -5,3 +5,8 @@ noremap <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Bind F3 to showing YankRing
 nnoremap <silent> <F3> :YRShow<CR>
+
+" Command-T
+" nnoremap <silent> <Leader>t :CommandT<CR>
+" nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
