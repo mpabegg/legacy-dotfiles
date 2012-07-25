@@ -14,12 +14,18 @@
 # For OS specific configurations
 OS=$(uname -s)
 
-# Set the PATH
-PATH=/sbin:/bin
-for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/local/git/bin ~/usr/bin; do
-  [ -d $p ] && PATH=$p:$PATH
-done
-export PATH
+# Set the PATH for linux
+# Note that for macosx the path needs to be set in /etc/paths and /etc/paths.d
+# As of writing zsh has a bug on macosx and needs the following command to
+# honour /etc/paths and /etc/paths.d: sudo mv /etc/zshenv /etc/zprofile
+# See file /etc/paths in /macosx/etc/paths inside this repo.
+if [ "$OS" = "Linux" ]; then
+  PATH=/sbin:/bin
+  for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/local/git/bin ~/usr/bin; do
+    [ -d $p ] && PATH=$p:$PATH
+  done
+  export PATH
+fi
 
 # Fix SSH_AUTH_SOCK when called from gnome shortcut key
 # See https://bugzilla.redhat.com/show_bug.cgi?id=713955
@@ -75,7 +81,7 @@ ZSH_THEME="sgeb"
 
 # Comment this out to disable weekly auto-update checks
 # Disabled, causes slow starts of zsh
-DISABLE_AUTO_UPDATE="true"
+#DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -103,11 +109,4 @@ source $ZSH/oh-my-zsh.sh
 # Set colors for ls
 [[ "$OS" == "Linux" ]] && export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
 [[ "$OS" == "Darwin" ]] && export LSCOLORS="exfxcxdxbxegedabagacad"
-
-# Matlab variables for OSX
-if [ "$OS" = "Darwin" ]; then
-  export MATLABROOT="/Applications/MATLAB_R2011a.app"
-  export DYLD_LIBRARY_PATH="$MATLABROOT/runtime/maci64:$MATLABROOT/bin/maci64:$MATLABROOT/sys/os/maci64:"
-  export XAPPLRESDIR="$MATLABROOT/X11/app-defaults"
-fi
 
