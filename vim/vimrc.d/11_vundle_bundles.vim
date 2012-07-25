@@ -15,14 +15,18 @@ Bundle 'gmarik/vundle'
 " A clone of TextMate's twilight colorscheme
 Bundle 'matthewtodd/vim-twilight'
 
-" Provides functionality needed by other bundles.
-Bundle 'L9'
+" Awesome solarized
+Bundle 'altercation/vim-colors-solarized'
 
 " FuzzyFinder provides convenient ways to quickly reach the
 " buffer/file/command/bookmark/tag you want. FuzzyFinder searches with the
 " fuzzy/partial pattern to which it converted an entered pattern.
 " README at https://github.com/vim-scripts/FuzzyFinder
+Bundle 'L9'
 Bundle 'FuzzyFinder'
+
+" Shows a window with Most Recently Used files ("Open recent")
+Bundle 'mru.vim'
 
 " A tree explorer plugin for vim
 " README at https://github.com/scrooloose/nerdtree/
@@ -121,4 +125,5 @@ Bundle 'YankRing.vim'
 " opening files and buffers with a minimal number of keystrokes.
 " README at https://github.com/wincent/Command-T
 " Requires vim with ruby support (vim --version | grep "+ruby")
-Bundle 'wincent/Command-T'
+" Note: superseeded by the excellent FuzzyFinder
+"Bundle 'wincent/Command-T'
