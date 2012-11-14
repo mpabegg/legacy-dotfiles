@@ -48,7 +48,7 @@ set tags=./tags,/
 au BufReadPost *
             \ if ! exists("g:leave_my_cursor_position_alone") |
             \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-            \         exe "normal g'\"" |
+            \         exe "normal! g`\"" |
             \     endif |
             \ endif
 
@@ -300,7 +300,7 @@ nnoremap <C-y> 3<C-y>
 
 " make tabs and trailing spaces visible when requested
 set listchars=tab:>-,trail:·,eol:$,precedes:<,extends:>
-nmap <silent> <leader>v :set nolist!<CR>
+nmap <silent> <leader>/ :set nolist!<CR>
 
 " shorten command-line text and hide startup screen on empty buffer
 set shortmess=atI

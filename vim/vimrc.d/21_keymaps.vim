@@ -18,6 +18,10 @@ nnoremap <leader>w :w!<cr>
 " Fast editing of the .vimrc
 nnoremap <leader>e :e! ~/.vimrc<cr>
 
+" Map <leader>c[x|c|v] to system clipboard
+vnoremap <leader>cx "+d
+vnoremap <leader>cc "+y
+inoremap <leader>cv <c-r>+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -71,12 +75,12 @@ cno $c e <C-\>eCurrentFileDir("e")<cr>
 " cno $q <C-\>eDeleteTillSlash()<cr>
 
 " Bash like keys for the command line
-cnoremap <C-A>      <Home>
-cnoremap <C-E>      <End>
-cnoremap <C-K>      <C-U>
+" cnoremap <C-A>      <Home>
+" cnoremap <C-E>      <End>
+" cnoremap <C-K>      <C-U>
 
-cnoremap <C-P> <Up>
-cnoremap <C-N> <Down>
+" cnoremap <C-P> <Up>
+" cnoremap <C-N> <Down>
 
 " Useful on some European keyboards
 map ½ $
@@ -117,24 +121,17 @@ endfunc
 "Remap VIM 0
 map 0 ^
 
-"Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-"if MySys() == "mac"
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-"endif
+"Move a line of text using CTRL+[jk]
+nmap <C-j> mz:m+<cr>`z
+nmap <C-k> mz:m-2<cr>`z
+vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Do :help cope if you are unsure what cope is. It's super useful!
-map <leader>cc :botright cope<cr>
+map <leader>bc :botright cope<cr>
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
@@ -169,4 +166,3 @@ nnoremap <silent> <Leader>4 :GundoToggle<CR>
 " Command-T
 " nnoremap <silent> <Leader>t :CommandT<CR>
 " nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-
