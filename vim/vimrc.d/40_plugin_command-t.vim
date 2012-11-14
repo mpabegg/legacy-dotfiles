@@ -1,6 +1,6 @@
 autocmd VimEnter * call MyCommandT()
 
-function MyCommandT()
+function! MyCommandT()
     if exists(":CommandT") != 2
         return
     end

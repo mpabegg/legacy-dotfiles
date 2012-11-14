@@ -1,5 +1,4 @@
 syntax enable "Enable syntax hl
-colorscheme twilight
 
 " Set font according to system
 "if MySys() == "mac"
@@ -13,13 +12,13 @@ colorscheme twilight
 "endif
 
 if has("gui_running")
-  " set t_Co=256
-  set background=dark
-  "colorscheme peaksea
-  set nonu
+    set background=light
 else
-  "colorscheme default
-  "set background=dark
-
-  set nonu
+    " termcolors=256 is only needed if the terminal itself is not using the
+    " solarized theme, the solarized colors will then be approximated in vim
+    "let g:solarized_termcolors=256
+    set background=dark
 endif
+
+let g:solarized_visibility="high"
+colorscheme solarized

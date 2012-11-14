@@ -22,8 +22,12 @@ Bundle 'altercation/vim-colors-solarized'
 " buffer/file/command/bookmark/tag you want. FuzzyFinder searches with the
 " fuzzy/partial pattern to which it converted an entered pattern.
 " README at https://github.com/vim-scripts/FuzzyFinder
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+" Note: superseeded by the excellent CtrlP
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+
+" Fuzzy file, buffer, mru, tag, etc finder
+Bundle 'kien/ctrlp.vim'
 
 " Shows a window with Most Recently Used files ("Open recent")
 Bundle 'mru.vim'
@@ -46,6 +50,10 @@ Bundle 'scrooloose/syntastic'
 " README at https://github.com/tpope/vim-fugitive/
 Bundle 'tpope/vim-fugitive'
 
+" Syntax, indent, and filetype plugin files for git, gitcommit, gitconfig,
+" gitrebase, and gitsendemail
+Bundle 'tpope/vim-git'
+
 " Motions made easy: <Leader><Leader>{text-object} to hightlight the possible
 " targets, e.g.:
 " ,,w for the following words,
@@ -61,8 +69,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'ZoomWin'
 
 " Matlab bundles
-Bundle 'sgeb/vim-matlab'
+" Bundle 'sgeb/vim-matlab'
+Bundle 'MatlabFilesEdition'
 Bundle 'djoshea/vim-matlab-fold'
+
+" Source code browser (supports C/C++, java, perl, python, tcl, sql, php, and
+" any language that's understood by ctags)
+Bundle 'taglist.vim'
 
 " Perform all your vim insert mode completions with <tab>
 " README at https://github.com/ervandew/supertab/
@@ -127,3 +140,16 @@ Bundle 'YankRing.vim'
 " Requires vim with ruby support (vim --version | grep "+ruby")
 " Note: superseeded by the excellent FuzzyFinder
 "Bundle 'wincent/Command-T'
+
+" Aims to be a concise vim script that implements some of TextMate's snippets
+" features in Vim
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+
+" File and hunk folding support for diff/patch files
+Bundle 'sgeb/vim-diff-fold'
+
+" Graph your Vim undo tree in style
+Bundle 'sjl/gundo.vim'

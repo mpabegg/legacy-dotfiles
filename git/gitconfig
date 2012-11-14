@@ -21,16 +21,19 @@
 #    ls = ls-files
 
     d = diff
+    dt = difftool
     a = add
     sh = show
     s = status
-    ci = commit
+    st = status
+    c = commit
     co = checkout
     l = log --date=local
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s    %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    c = diff --cached
+    dc = diff --cached
+    p = push
     rb = pull --rebase
-    svrb = svn rebase
+    srb = svn rebase
     cp = cherry-pick
     b = branch
     time-machine = "!time-machine"
@@ -38,6 +41,9 @@
 
     # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
+
+[diff]
+    tool = vimdiff
 
 [color]
 	ui = true

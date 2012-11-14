@@ -40,6 +40,18 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Where to find the ctags file: first in current directory,
+" then working its way until /
+set tags=./tags,/
+
+" When editing a file, always jump to the last cursor position
+au BufReadPost *
+            \ if ! exists("g:leave_my_cursor_position_alone") |
+            \     if line("'\"") > 0 && line ("'\"") <= line("$") |
+            \         exe "normal g'\"" |
+            \     endif |
+            \ endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UI
@@ -122,12 +134,16 @@ set tabstop=4
 set smarttab
 
 set lbr
-set tw=500
+" set textwidth=500
 
 set ai "Auto indent
 set si "Smart indet
 set wrap "Wrap lines
 
+" Show the margin at 80 characters
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -156,7 +172,7 @@ map <leader>bd :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,300 bd!<cr>
 
-" Use the arrows to something usefull
+" Use the arrows to something useful
 map <right> :bn<cr>
 map <left> :bp<cr>
 
@@ -283,8 +299,11 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " make tabs and trailing spaces visible when requested
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+set listchars=tab:>-,trail:·,eol:$,precedes:<,extends:>
+nmap <silent> <leader>v :set nolist!<CR>
 
 " shorten command-line text and hide startup screen on empty buffer
 set shortmess=atI
+
+" Add mouse support for terminal (enable in GUI by default)
+set mouse=a

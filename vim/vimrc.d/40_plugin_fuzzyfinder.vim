@@ -1,6 +1,6 @@
 autocmd VimEnter * call MyFuzzyFinder()
 
-function MyFuzzyFinder()
+function! MyFuzzyFinder()
     if exists(":FufFile") != 2
         return
     end
@@ -9,8 +9,8 @@ function MyFuzzyFinder()
     let g:fuf_mrufile_maxItem = 1000
     let g:fuf_mrucmd_maxItem = 400
     let g:fuf_mrufile_exclude = '\v\~$|\.(bak|sw[po])$|^(\/\/|\\\\|\/mnt\/)'
-    nnoremap <silent> <leader>j    :FufCoverageFile<CR>
-    " nnoremap <silent> <C-n>      :FufBuffer<CR>
+    nnoremap <silent> <C-a><C-f>    :FufCoverageFile<CR>
+    nnoremap <silent> <C-a><C-b>    :FufBuffer<CR>
     " nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
     " nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
     " nnoremap <silent> <C-f>p     :FufFile<CR>
@@ -24,11 +24,11 @@ function MyFuzzyFinder()
     " nnoremap <silent> <C-f>t     :FufTag!<CR>
     " noremap  <silent> g]         :FufTagWithCursorWord!<CR>
     " nnoremap <silent> <C-f><C-f> :FufTaggedFile<CR>
-    " nnoremap <silent> <C-f><C-j> :FufJumpList<CR>
-    " nnoremap <silent> <C-f><C-g> :FufChangeList<CR>
-    " nnoremap <silent> <C-f><C-q> :FufQuickfix<CR>
-    " nnoremap <silent> <C-f><C-l> :FufLine<CR>
-    " nnoremap <silent> <C-f><C-h> :FufHelp<CR>
+    nnoremap <silent> <C-a><C-j> :FufJumpList<CR>
+    " nnoremap <silent> <C-a><C-c> :FufChangeList<CR>
+    " nnoremap <silent> <C-a><C-q> :FufQuickfix<CR>
+    nnoremap <silent> <C-a><C-l> :FufLine<CR>
+    nnoremap <silent> <C-a><C-h> :FufHelp<CR>
     " nnoremap <silent> <C-f><C-b> :FufAddBookmark<CR>
     " vnoremap <silent> <C-f><C-b> :FufAddBookmarkAsSelectedText<CR>
     " nnoremap <silent> <C-f><C-e> :FufEditInfo<CR>

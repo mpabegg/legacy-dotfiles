@@ -1,13 +1,22 @@
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+" NB: the leader is set in 01_init.vim because it must be set before loading
+" plugins.
+
+" map ; to :
+nnoremap ; :
+
+" map ` to ' and vice-versa
+nnoremap ` '
+nnoremap ' `
+
+" map j and k to move inside wrapped lines
+nnoremap j gj
+nnoremap k gk
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nnoremap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
-map <leader>e :e! ~/.vimrc<cr>
+nnoremap <leader>e :e! ~/.vimrc<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -58,7 +67,8 @@ cno $j e ./
 cno $c e <C-\>eCurrentFileDir("e")<cr>
 
 " $q is super useful when browsing on the command line
-cno $q <C-\>eDeleteTillSlash()<cr>
+" commented out, provided by default <C-w>
+" cno $q <C-\>eDeleteTillSlash()<cr>
 
 " Bash like keys for the command line
 cnoremap <C-A>      <Home>
@@ -79,22 +89,22 @@ func! Cwd()
   return "e " . cwd 
 endfunc
 
-func! DeleteTillSlash()
-  let g:cmd = getcmdline()
-"  if MySys() == "linux" || MySys() == "mac"
-    let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
-"  else
-"    let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
-"  endif
-  if g:cmd == g:cmd_edited
-"    if MySys() == "linux" || MySys() == "mac"
-      let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
-"    else
-"      let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
-"    endif
-  endif
-  return g:cmd_edited
-endfunc
+" func! DeleteTillSlash()
+"   let g:cmd = getcmdline()
+" "  if MySys() == "linux" || MySys() == "mac"
+"     let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
+" "  else
+" "    let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
+" "  endif
+"   if g:cmd == g:cmd_edited
+" "    if MySys() == "linux" || MySys() == "mac"
+"       let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
+" "    else
+" "      let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
+" "    endif
+"   endif
+"   return g:cmd_edited
+" endfunc
 
 func! CurrentFileDir(cmd)
   return a:cmd . " " . expand("%:p:h") . "/"
@@ -120,14 +130,6 @@ vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
   vmap <D-k> <M-k>
 "endif
 
-"Delete trailing white space, useful for Python ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,19 +150,21 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-
-
-
 """""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""
 
-" Use F2 to open NERDTree
-"noremap <silent> <F2> :NERDTreeToggle<Return>
-noremap <silent> <F2> :NERDTreeTabsToggle<Return>
-noremap <Leader>n <plug>NERDTreeTabsToggle<CR>
+" Use <Leader>1 to open NERDTree
+"noremap <silent> <Leader>1 :NERDTreeToggle<Return>
+noremap <silent> <Leader>1 :NERDTreeTabsToggle<Return>
 
-" Bind F3 to showing YankRing
-nnoremap <silent> <F3> :YRShow<CR>
+" Bind <Leader>2 to show taglist
+nnoremap <silent> <Leader>2 :TlistToggle<CR>
+
+" Bind <Leader>3 to show YankRing
+nnoremap <silent> <Leader>3 :YRShow<CR>
+
+" Bind <Leader>4 to show Gundo
+nnoremap <silent> <Leader>4 :GundoToggle<CR>
 
 " Command-T
 " nnoremap <silent> <Leader>t :CommandT<CR>
