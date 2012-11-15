@@ -21,7 +21,8 @@ nnoremap <leader>e :e! ~/.vimrc<cr>
 " Map <leader>c[x|c|v] to system clipboard
 vnoremap <leader>cx "+d
 vnoremap <leader>cc "+y
-inoremap <leader>cv <c-r>+
+vnoremap <leader>cv "+p
+nnoremap <leader>cv "+p
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
