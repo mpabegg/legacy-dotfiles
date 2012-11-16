@@ -153,3 +153,8 @@ Bundle 'sgeb/vim-diff-fold'
 
 " Graph your Vim undo tree in style
 Bundle 'sjl/gundo.vim'
+
+" Better support for javascript in vim (indentation, ctags and more). Include
+" the plugin htmlindent
+" After installation, run 'rake ctags' inside .vim/bundle/vim-javascript
+Bundle 'pangloss/vim-javascript'
