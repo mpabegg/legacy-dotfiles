@@ -158,3 +158,6 @@ Bundle 'sjl/gundo.vim'
 " the plugin htmlindent
 " After installation, run 'rake ctags' inside .vim/bundle/vim-javascript
 Bundle 'pangloss/vim-javascript'
+
+" Color-highlight nested round/square parentheses, brackets and chevrons
+Bundle 'kien/rainbow_parentheses.vim'
