@@ -1,3 +1,22 @@
+ZSH_PROFILING=n
+if [ "$ZSH_PROFILING" = "y" ]; then
+    if gdate >/dev/null 2>&1; then
+        ZSH_PROFILING_GNUDATE=y
+
+        # set the trace prompt to include seconds, nanoseconds, script name
+        # and line number
+        PS4='+$(gdate "+%s:%N") %N:%i> '
+        # save file stderr to file descriptor 3 and redirect stderr (including
+        # trace output) to a file with the script's PID as an extension
+        exec 3>&2 2>/tmp/zsh.startlog.$$
+        # set options to turn on tracing and expansion of commands contained
+        # in the prompt
+        setopt xtrace prompt_subst
+    else
+        echo "ZSH_PROFILING needs GNU date for milliseconds support, abort profiling."
+    fi
+fi
+
 # This file is shared across all environments:
 # * on linux workstations the shortcut M-Esc is bound to:
 #     toggle-window -n fullscreen-terminal \
@@ -116,4 +135,14 @@ source $ZSH/oh-my-zsh.sh
 # Set colors for ls
 [[ "$OS" == "Linux" ]] && export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
 [[ "$OS" == "Darwin" ]] && export LSCOLORS="exfxcxdxbxegedabagacad"
+
+# Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+if [ "$ZSH_PROFILING" = "y" -a "$ZSH_PROFILING_GNUDATE" = "y" ]; then
+    # turn off tracing
+    unsetopt xtrace
+    # restore stderr to the value saved in FD 3
+    exec 2>&3 3>&-
+fi
 
