@@ -122,7 +122,7 @@ DISABLE_VENV_CD=1
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git-flow extract sgeb-git sgeb-braindump virtualenvwrapper)
 # virtualenvwrapper seems to slow down zsh loading a lot
-plugins=(git-flow extract sgeb-git)
+plugins=(git-flow extract)
 
 # OS specific plugins
 [[ "$OS" = "Linux" ]] && plugins+=(sgeb-apt)
