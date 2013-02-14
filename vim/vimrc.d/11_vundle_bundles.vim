@@ -161,3 +161,6 @@ Bundle 'pangloss/vim-javascript'
 
 " Color-highlight nested round/square parentheses, brackets and chevrons
 Bundle 'kien/rainbow_parentheses.vim'
+
+" Support for coffee-script
+Bundle 'vim-coffee-script'
