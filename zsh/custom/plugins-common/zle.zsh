@@ -35,3 +35,11 @@ bindkey -s '\eg' '^Ugit status^M'
 
 # alt+G: execute 'git status .'
 bindkey -s '\eG' '^Ugit status .^M'
+
+# alt+j: add new-line for multi-line edits in zle (needs exception for midnight commander)
+if [[ "$MC_SID" != "" || "$MC_CONTROL_PID" != "" ]]; then
+    bindkey "^J" accept-line
+else
+    bindkey "^J" self-insert
+fi
+
