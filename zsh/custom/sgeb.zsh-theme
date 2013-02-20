@@ -8,6 +8,7 @@
 
 MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
 local return_status="%{$fg[red]%}%(?..%? ↵)%{$reset_color%} "
+local running_jobs="%(1j. (%{$fg[blue]%}%j%{$reset_color%}).)"
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ➤ %{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -90,8 +91,8 @@ PROMPT='
 $(prompt_char) '
 
 function rprompt_git() {
-    [ "$(sgeb_git_prompt_level)" = "2" ] && echo "$(git_time_since_commit)$(git_prompt_status)"
+    [ "$(sgeb_git_prompt_level)" = "2" ] && echo "$(git_time_since_commit)$(git_prompt_status)%{$reset_color%}"
 }
 
-RPROMPT='${return_status}$(rprompt_git)%{$reset_color%}'
+RPROMPT='${return_status}$(rprompt_git)${running_jobs}'
 
