@@ -12,6 +12,9 @@ bindkey -s '\eU' '^Ucd ..^M'
 # If AUTO_PUSHD is set, alt+p pops the dir stack
 bindkey -s '\ep' '^Upopd >/dev/null; dirs -v^M'
 
+# alt+P shows the dir stack
+bindkey -s '\eP' '^Udirs -v^M'
+
 # alt+F: find files matching patterns using fastfind (see other zsh file)
 bindkey -s '\eF' '^Aff ^M'
 
