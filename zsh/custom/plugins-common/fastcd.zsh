@@ -7,6 +7,7 @@ function d()
     aliases["g"]="$HOME/dev/gap/gid/"
     aliases["gs"]="$HOME/dev/gap/svn/"
     aliases["bb"]="$HOME/dev/gap/brazil-build/"
+    aliases["bd"]="$HOME/usr/braindump/"
     aliases["bin"]="$HOME/usr/bin/"
     aliases["dotfiles"]="$HOME/usr/dotfiles/"
     aliases["df"]=$aliases["dotfiles"]
