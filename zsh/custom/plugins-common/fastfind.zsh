@@ -28,7 +28,12 @@ fn() {
 
 fvi() { vi "$(fn $1)";  }
 
-fcd() { cd $(dirname "$(fn $1)"); }
+fcd()
+{
+    FN=$(fn $1);
+    [ ! -d "$FN" ] && FN=$(dirname $FN);
+    cd "$FN";
+}
 
 fcat() { cat "$(fn $1)"; }
 
