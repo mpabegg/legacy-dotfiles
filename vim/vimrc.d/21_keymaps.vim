@@ -24,9 +24,10 @@ vnoremap <leader>cc "+y
 vnoremap <leader>cv "+p
 nnoremap <leader>cv "+p
 
-" highlight the current line, and have the highlighting stay where it is when
-" the cursor is moved. Delete with :match
+" highlight the current line with <leader>l, and have the highlighting stay
+" where it is when the cursor is moved. Delete with :match or <leader>L
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
+nnoremap <silent> <Leader>L ml:execute 'match'<CR>
 
 
 """"""""""""""""""""""""""""""
