@@ -169,3 +169,6 @@ Bundle 'vim-coffee-script'
 " Disables arrow keys, hjkl, page up/down
 " Toggle HardMode/EasyMode with <leader>h, see other config file
 " Bundle 'wikitopian/hardmode'
+
+" Show git status / git diff in the vim gutter
+Bundle "airblade/vim-gitgutter"
