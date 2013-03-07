@@ -87,7 +87,7 @@ function git_time_since_commit() {
 }
 
 PROMPT='
-[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(sgeb_git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha)]
+[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}${PWD/$HOME/~}%{$reset_color%}$(sgeb_git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha)]
 $(prompt_char) '
 
 function rprompt_git() {
