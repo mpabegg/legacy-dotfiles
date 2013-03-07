@@ -168,4 +168,4 @@ Bundle 'vim-coffee-script'
 " Vim HardMode, disable character-wise navigation to master advanced motions
 " Disables arrow keys, hjkl, page up/down
 " Toggle HardMode/EasyMode with <leader>h, see other config file
-Bundle 'wikitopian/hardmode'
+" Bundle 'wikitopian/hardmode'
