@@ -90,6 +90,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Set line numbers
+set nu
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Encoding

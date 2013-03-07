@@ -24,10 +24,10 @@ vnoremap <leader>cc "+y
 vnoremap <leader>cv "+p
 nnoremap <leader>cv "+p
 
-" highlight the current line with <leader>l, and have the highlighting stay
-" where it is when the cursor is moved. Delete with :match or <leader>L
-nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
-nnoremap <silent> <Leader>L ml:execute 'match'<CR>
+" highlight the current line with <leader>h, and have the highlighting stay
+" where it is when the cursor is moved. Delete with :match or <leader>H
+nnoremap <silent> <Leader>h ml:execute 'match Search /\%'.line('.').'l/'<CR>
+nnoremap <silent> <Leader>H ml:execute 'match'<CR>
 
 
 """"""""""""""""""""""""""""""
@@ -173,3 +173,7 @@ nnoremap <silent> <Leader>4 :GundoToggle<CR>
 " Command-T
 " nnoremap <silent> <Leader>t :CommandT<CR>
 " nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
+" <leader>l to goggle between absolute, relative and no line numbers
+nnoremap <silent> <leader>l :exec &nu == &rnu ? "se nu!" : "se rnu!"<cr>
+
