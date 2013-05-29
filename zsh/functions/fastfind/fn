@@ -1,0 +1,4 @@
+item=${FFOUND[$1]}
+[ -z "$item" ] && return
+[ "$PWD" != "$FFOUND_PWD" ] && echo -n $FFOUND_PWD/
+echo ${item##$FFOUND_PWD/}

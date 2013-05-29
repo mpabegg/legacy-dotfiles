@@ -1,8 +1,9 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/usr/dotfiles
+# some handy variables
+export USR=$HOME/usr
+export PROJECTS=$HOME/dev
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/dev
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$USR/dotfiles
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -40,25 +41,6 @@ done
 unset config_files
 
 ######################
-# ZSH_PROFILING=n
-# if [ "$ZSH_PROFILING" = "y" ]; then
-#     if gdate >/dev/null 2>&1; then
-#         ZSH_PROFILING_GNUDATE=y
-
-#         # set the trace prompt to include seconds, nanoseconds, script name
-#         # and line number
-#         PS4='+$(gdate "+%s:%N") %N:%i> '
-#         # save file stderr to file descriptor 3 and redirect stderr (including
-#         # trace output) to a file with the script's PID as an extension
-#         exec 3>&2 2>/tmp/zsh.startlog.$$
-#         # set options to turn on tracing and expansion of commands contained
-#         # in the prompt
-#         setopt xtrace prompt_subst
-#     else
-#         echo "ZSH_PROFILING needs GNU date for milliseconds support, abort profiling."
-#     fi
-# fi
-
 # This file is shared across all environments:
 # * on linux workstations the shortcut M-Esc is bound to:
 #     toggle-window -n fullscreen-terminal \
@@ -180,12 +162,5 @@ plugins=(git-flow extract sgeb-braindump)
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-if [ "$ZSH_PROFILING" = "y" -a "$ZSH_PROFILING_GNUDATE" = "y" ]; then
-    # turn off tracing
-    unsetopt xtrace
-    # restore stderr to the value saved in FD 3
-    exec 2>&3 3>&-
-fi
 
 source "`brew --prefix`/etc/grc.bashrc"

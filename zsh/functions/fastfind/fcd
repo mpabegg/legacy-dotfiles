@@ -1,0 +1,11 @@
+local DIR
+if (($+1));
+then
+    DIR=$(fn $1)
+    [ ! -d "$DIR" ] && DIR=$(dirname $DIR)
+else
+    DIR=${FFOUND_PWD}
+fi
+
+cd "$DIR"
+pwd
