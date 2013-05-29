@@ -12,7 +12,8 @@ syntax enable "Enable syntax hl
 "endif
 
 if has("gui_running")
-    set background=light
+    " set background=light
+    set background=dark
 else
     " termcolors=256 is only needed if the terminal itself is not using the
     " solarized theme, the solarized colors will then be approximated in vim
