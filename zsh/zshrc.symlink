@@ -55,7 +55,7 @@ unset config_files
 #   FULLSCREEN_TERMINAL in that setup).
 
 # For OS specific configurations
-OS=$(uname -s)
+# OS=$(uname -s)
 
 # Set the PATH for linux
 # Note that for macosx the path needs to be set in /etc/paths and /etc/paths.d
@@ -103,64 +103,17 @@ OS=$(uname -s)
 #   fi
 # fi
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Path to override the default ZSH custom directory
-ZSH_CUSTOM=$(dirname $(realpath ${ZDOTDIR-~}/.zshrc))/custom
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="sgeb"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# Disabled, causes slow starts of zsh
-#DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
 # Uncomment following line if you want to disable autosetting terminal
 # title.
 # Do no update title if on linux and outside tmux, needed for the
 # system-wide console hotkey (xdotool checks the window title)
-[[ "$OS" = "Linux" && -z "$TMUX" ]] && DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
-# Don't change virtualenv on cd
-DISABLE_VENV_CD=1
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(git-flow extract sgeb-git sgeb-braindump virtualenvwrapper)
-# virtualenvwrapper seems to slow down zsh loading a lot
-plugins=(git-flow extract sgeb-braindump)
-
-# OS specific plugins
-[[ "$OS" = "Linux" ]] && plugins+=(sgeb-apt)
-[[ "$OS" = "Darwin" ]] && plugins+=(brew) #(osx mate)
-
-# plugins=
-# ZSH_THEME=
-# source $ZSH/oh-my-zsh.sh
+# [[ "$OS" = "Linux" && -z "$TMUX" ]] && DISABLE_AUTO_TITLE="true"
 
 # Set colors for ls
-[[ "$OS" == "Linux" ]] && export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
-[[ "$OS" == "Darwin" ]] && export LSCOLORS="exfxcxdxbxegedabagacad"
+# [[ "$OS" == "Linux" ]] && export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+# [[ "$OS" == "Darwin" ]] && export LSCOLORS="exfxcxdxbxegedabagacad"
 
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-source "`brew --prefix`/etc/grc.bashrc"
+# source "`brew --prefix`/etc/grc.bashrc"
