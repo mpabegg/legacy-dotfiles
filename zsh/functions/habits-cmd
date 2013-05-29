@@ -5,6 +5,5 @@ history -50000 -1 \
     | sort \
     | uniq -c \
     | sort -n -r \
-    | head -n 20'
-
+    | head -n 20
 

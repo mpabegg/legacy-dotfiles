@@ -3,3 +3,13 @@ fpath=($ZSH/zsh/functions/**/ $fpath)
 
 # Autoload all files in $ZSH/zsh/functions
 autoload -U $ZSH/zsh/functions/**/*(.:t)
+
+# Colorful ls
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export CLICOLOR=true
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
