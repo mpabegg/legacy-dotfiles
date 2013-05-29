@@ -1,21 +1,63 @@
-ZSH_PROFILING=n
-if [ "$ZSH_PROFILING" = "y" ]; then
-    if gdate >/dev/null 2>&1; then
-        ZSH_PROFILING_GNUDATE=y
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/usr/dotfiles
 
-        # set the trace prompt to include seconds, nanoseconds, script name
-        # and line number
-        PS4='+$(gdate "+%s:%N") %N:%i> '
-        # save file stderr to file descriptor 3 and redirect stderr (including
-        # trace output) to a file with the script's PID as an extension
-        exec 3>&2 2>/tmp/zsh.startlog.$$
-        # set options to turn on tracing and expansion of commands contained
-        # in the prompt
-        setopt xtrace prompt_subst
-    else
-        echo "ZSH_PROFILING needs GNU date for milliseconds support, abort profiling."
-    fi
+# your project folder that we can `c [tab]` to
+export PROJECTS=~/dev
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
 fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
+
+######################
+# ZSH_PROFILING=n
+# if [ "$ZSH_PROFILING" = "y" ]; then
+#     if gdate >/dev/null 2>&1; then
+#         ZSH_PROFILING_GNUDATE=y
+
+#         # set the trace prompt to include seconds, nanoseconds, script name
+#         # and line number
+#         PS4='+$(gdate "+%s:%N") %N:%i> '
+#         # save file stderr to file descriptor 3 and redirect stderr (including
+#         # trace output) to a file with the script's PID as an extension
+#         exec 3>&2 2>/tmp/zsh.startlog.$$
+#         # set options to turn on tracing and expansion of commands contained
+#         # in the prompt
+#         setopt xtrace prompt_subst
+#     else
+#         echo "ZSH_PROFILING needs GNU date for milliseconds support, abort profiling."
+#     fi
+# fi
 
 # This file is shared across all environments:
 # * on linux workstations the shortcut M-Esc is bound to:
@@ -38,46 +80,46 @@ OS=$(uname -s)
 # As of writing zsh has a bug on macosx and needs the following command to
 # honour /etc/paths and /etc/paths.d: sudo cp /etc/zshenv /etc/zprofile
 # See file /etc/paths in /macosx/etc/paths inside this repo.
-if [ "$OS" = "Linux" ]; then
-  PATH=/sbin:/bin
-  for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/local/git/bin ~/usr/bin ~/.rvm/bin; do
-    [ -d $p ] && PATH=$p:$PATH
-  done
-  export PATH
-fi
+# if [ "$OS" = "Linux" ]; then
+#   PATH=/sbin:/bin
+#   for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/local/git/bin ~/usr/bin ~/.rvm/bin; do
+#     [ -d $p ] && PATH=$p:$PATH
+#   done
+#   export PATH
+# fi
 
 # Fix SSH_AUTH_SOCK when called from gnome shortcut key
 # See https://bugzilla.redhat.com/show_bug.cgi?id=713955
-if [ "$OS" = "Linux" ]; then
-  SSH_AUTH_SOCK=`netstat -xl | grep -o '/tmp/keyring-.*/ssh$'`
-  [ -n "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
-fi
+# if [ "$OS" = "Linux" ]; then
+#   SSH_AUTH_SOCK=`netstat -xl | grep -o '/tmp/keyring-.*/ssh$'`
+#   [ -n "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+# fi
 
 # Should we start tmux?
 # Values of ZSH_USE_TMUX:
 # * 0: don't start tmux
 # * 1: attach to first deattached tmux, or create new one
 # * 2: attach to first tmux (multiple clients share same tmux)
-if [[ -n "$SSH_TTY" ]]; then
-    ZSH_USE_TMUX=2
-elif [[ -n "$FULLSCREEN_TERMINAL" ]]; then
-    ZSH_USE_TMUX=1
-else
-    ZSH_USE_TMUX=0
-fi
+# if [[ -n "$SSH_TTY" ]]; then
+#     ZSH_USE_TMUX=2
+# elif [[ -n "$FULLSCREEN_TERMINAL" ]]; then
+#     ZSH_USE_TMUX=1
+# else
+#     ZSH_USE_TMUX=0
+# fi
 
 # Start tmux (if not already started)
-if [[ -z "$TMUX" && $ZSH_USE_TMUX > 0 ]]; then
-  if [[ $ZSH_USE_TMUX = 2 ]]; then
-    tmux_shared 'shared' && exit $?
-  elif [[ $ZSH_USE_TMUX = 1 ]]; then
-    if tmux ls 2> /dev/null | grep -v '(attached)$' > /dev/null; then
-      tmux attach && exit $?
-    else
-      tmux -2 && exit $?
-    fi
-  fi
-fi
+# if [[ -z "$TMUX" && $ZSH_USE_TMUX > 0 ]]; then
+#   if [[ $ZSH_USE_TMUX = 2 ]]; then
+#     tmux_shared 'shared' && exit $?
+#   elif [[ $ZSH_USE_TMUX = 1 ]]; then
+#     if tmux ls 2> /dev/null | grep -v '(attached)$' > /dev/null; then
+#       tmux attach && exit $?
+#     else
+#       tmux -2 && exit $?
+#     fi
+#   fi
+# fi
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -130,7 +172,7 @@ plugins=(git-flow extract sgeb-braindump)
 
 # plugins=
 # ZSH_THEME=
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # Set colors for ls
 [[ "$OS" == "Linux" ]] && export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
@@ -146,3 +188,4 @@ if [ "$ZSH_PROFILING" = "y" -a "$ZSH_PROFILING_GNUDATE" = "y" ]; then
     exec 2>&3 3>&-
 fi
 
+source "`brew --prefix`/etc/grc.bashrc"

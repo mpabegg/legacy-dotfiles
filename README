@@ -1,1 +1,4 @@
-dotfiles-public - Public dotfiles shared between Linux and Mac OS X.
+dotfiles-public - My public dotfiles shared between Linux and Mac OS X.
+
+Inspired from a bunch of different places, most notably oh-my-zsh and
+https://github.com/holman/dotfiles.git
