@@ -2,7 +2,7 @@
 #
 # Setup dotfiles
 
-DOTFILES_ROOT="`pwd`"
+DOTFILES_ROOT="$HOME/usr/dotfiles"
 
 set -e
 
@@ -24,6 +24,16 @@ fail () {
     printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
     echo ''
     exit 1
+}
+
+clone_dotfiles () {
+    if ! [ -d $DOTFILES_ROOT ]
+    then
+        info "cloning sgeb/dotfiles-public.git to $DOTFILES_ROOT"
+        git clone -q https://github.com/sgeb/dotfiles-public.git $DOTFILES_ROOT
+    else
+        success "skipped cloning sgeb/dotfiles.git to $DOTFILES_ROOT"
+    fi
 }
 
 setup_gitconfig () {
@@ -114,6 +124,7 @@ install_dotfiles () {
     done
 }
 
+clone_dotfiles
 # setup_gitconfig
 install_dotfiles
 
