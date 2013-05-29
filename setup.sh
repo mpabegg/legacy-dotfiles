@@ -52,12 +52,17 @@ setup_gitconfig () {
     fi
 }
 
+copy_file () {
+    cp "$1" "$2"
+    success "copied $1 to $2"
+}
+
 link_files () {
-    ln -s $1 $2
+    ln -s "$1" "$2"
     success "linked $1 to $2"
 }
 
-install_dotfiles () {
+install_dotfiles_symlinks () {
     info 'installing dotfiles'
 
     overwrite_all=false
@@ -126,18 +131,19 @@ install_dotfiles () {
 
 clone_dotfiles
 # setup_gitconfig
-install_dotfiles
+install_dotfiles_symlinks
 
 # If we are on a mac, lets install and setup homebrew
 if [ "$(uname -s)" == "Darwin" ]
 then
-    info "installing dependencies"
-    if . bin/dot > /tmp/dotfiles-dot 2>&1
-    then
-        success "dependencies installed"
-    else
-        fail "error installing dependencies"
-    fi
+    . osx/setup.shlib
+    # info "installing dependencies"
+    # if . bin/dot > /tmp/dotfiles-dot 2>&1
+    # then
+    #     success "dependencies installed"
+    # else
+    #     fail "error installing dependencies"
+    # fi
 fi
 
 echo ''
