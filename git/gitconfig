@@ -30,7 +30,7 @@
     c = commit
     co = checkout
     l = log --date=local
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s    %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s    %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
     dc = diff --cached
     p = push
     rb = pull --rebase
