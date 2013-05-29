@@ -42,12 +42,13 @@
     # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
 
-[push]
+# Disabled, git 1.7.9.5 doesn't know about this setting
+# [push]
     # See `git help config` (search for push.default)
     # for more information on different options of the below setting.
     #
     # Setting to git 2.0 default to surpress warning message
-    default = simple
+    # default = simple
 
 [diff]
     tool = vimdiff
