@@ -73,7 +73,7 @@ install_dotfiles_symlinks () {
     do
         dest="$HOME/.`basename \"${source%.*}\"`"
 
-        if [ -f $dest ] || [ -d $dest ]
+        if [ -f $dest -o -d $dest -o -L $dest ]
         then
 
             overwrite=false

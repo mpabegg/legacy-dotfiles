@@ -1,54 +1,64 @@
 # some handy variables
 export USR=$HOME/usr
 export PROJECTS=$HOME/dev
+export DOTFILES=$USR/dotfiles
+export ZSH=$DOTFILES/zsh
 
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$USR/dotfiles
-
-# use .localrc for SUPER SECRET CRAP that you don't
+# use .zshrc.local for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
+if [[ -a ~/.zshrc.local ]]
 then
-  source ~/.localrc
+    source ~/.zshrc.local
 fi
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+# source all of our zsh files (using an anonymous function)
+function
+{
+    typeset -U config_files
+    config_files=($(find $DOTFILES -type f -name "*.zsh" -maxdepth 2))
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
+    # load the path files
+    for file in ${(M)config_files:#*/path.zsh}
+    do
+        source $file
+    done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
+    # load everything but the path and completion files
+    for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+    do
+        source $file
+    done
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
+    # initialize autocomplete here, otherwise functions won't be loaded
+    autoload -U compinit; compinit
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
+    # load every completion after autocomplete loads
+    for file in ${(M)config_files:#*/completion.zsh}
+    do
+        source $file
+    done
+}
 
-unset config_files
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Prepend all directories in $ZSH/zsh/functions to the fpath
+fpath=($ZSH/functions/**/ $fpath)
+# and autoload all files in $ZSH/zsh/functions
+autoload -U $ZSH/functions/**/*(.:t)
+
 
 ######################
 # This file is shared across all environments:
 # * on linux workstations the shortcut M-Esc is bound to:
 #     toggle-window -n fullscreen-terminal \
-#       -c "gnome-terminal --full-screen --hide-menubar \
-#       --working-directory=~ -t fullscreen-terminal -e \
-#       'env FULLSCREEN_TERMINAL=y zsh'"
+    #       -c "gnome-terminal --full-screen --hide-menubar \
+    #       --working-directory=~ -t fullscreen-terminal -e \
+    #       'env FULLSCREEN_TERMINAL=y zsh'"
 #   and normal terminal run windowed without \
-#   FULLSCREEN_TERMINAL being set.
+    #   FULLSCREEN_TERMINAL being set.
 # * on linux servers the shell variable $SSH_TTY is non-empty.
 # * on osx the shortcut M-Esc is bound to a fullscreen
 #   instance of iTerm2 (still need to find a way to set
