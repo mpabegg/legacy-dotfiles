@@ -4,12 +4,7 @@ alias dns-flush="sudo killall -HUP mDNSResponder"
 # Basic directory operations
 alias pu='pushd'
 alias po='popd'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias -- -='cd -'
-alias -- -2='cd -2'
-alias -- -3='cd -3'
+alias -- -='cd +1'
 
 # List direcory contents
 alias l='ls -lAh'
