@@ -30,9 +30,8 @@ clone_dotfiles () {
     if ! [ -d $DOTFILES_ROOT ]
     then
         info "cloning sgeb/dotfiles.git to $DOTFILES_ROOT"
-        git clone -q https://github.com/sgeb/dotfiles.git $DOTFILES_ROOT
-    else
-        success "skipped cloning sgeb/dotfiles.git to $DOTFILES_ROOT"
+        git clone --recursive -q https://github.com/sgeb/dotfiles.git $DOTFILES_ROOT
+        success "cloned sgeb/dotfiles.git to $DOTFILES_ROOT"
     fi
 }
 
