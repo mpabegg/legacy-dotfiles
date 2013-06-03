@@ -11,6 +11,18 @@ then
     source ~/.zshrc.local
 fi
 
+# Source Prezto before our own functions and zsh files so that we can
+# override settings and aliases (or unalias awkward ones)
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Prepend all directories in $ZSH/zsh/functions to the fpath
+fpath=($ZSH/functions/**/ $fpath)
+# and autoload all files in $ZSH/zsh/functions
+# before sourcing our zsh files so that we can use custom functions there
+autoload -U $ZSH/functions/**/*(.:t)
+
 # source all of our zsh files (using an anonymous function)
 function
 {
@@ -38,16 +50,6 @@ function
         source $file
     done
 }
-
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-# Prepend all directories in $ZSH/zsh/functions to the fpath
-fpath=($ZSH/functions/**/ $fpath)
-# and autoload all files in $ZSH/zsh/functions
-autoload -U $ZSH/functions/**/*(.:t)
 
 
 ######################

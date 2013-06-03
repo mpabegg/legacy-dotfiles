@@ -1,5 +1,9 @@
+# Unalias shadows
+unalias d
+
 alias reload!='. ~/.zshrc'
 alias dns-flush="sudo killall -HUP mDNSResponder"
+alias alias-search="alias | grep -i"
 
 # Basic directory operations
 alias pu='pushd'
