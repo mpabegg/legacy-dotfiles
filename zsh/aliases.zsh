@@ -1,5 +1,5 @@
-# Unalias shadows
-unalias d
+# Unalias commands defined by prezto
+unalias d 2>/dev/null
 
 alias reload!='. ~/.zshrc'
 alias dns-flush="sudo killall -HUP mDNSResponder"

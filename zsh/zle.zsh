@@ -25,10 +25,10 @@ bindkey -s '\eL' '^Uls -l^M'
 bindkey -s '\ev' '^E 2>&1 | view -^M'
 
 # alt+g: execute 'git status'
-bindkey -s '\eg' '^Ugit status^M'
+bindkey -s '\eg' '^Ugws^M'
 
 # alt+G: execute 'git status .'
-bindkey -s '\eG' '^Ugit status .^M'
+bindkey -s '\eG' '^Ugws .^M'
 
 # alt+j: add new-line for multi-line edits in zle (needs exception for midnight commander)
 if [[ "$MC_SID" != "" || "$MC_CONTROL_PID" != "" ]]; then

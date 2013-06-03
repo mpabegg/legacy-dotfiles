@@ -1,13 +1,15 @@
 # Quickly change to frequently used directories
 
 local -A aliases
-aliases[d]=$PROJECTS/
-aliases[g]=$PROJECTS/gap/gid/
-aliases[gs]=$PROJECTS/gap/svn/
-aliases[bb]=$PROJECTS/gap/brazil-build/
-aliases[bd]=$USR/braindump/
-aliases[bin]=$USR/bin/
-aliases[dotfiles]=$USR/dotfiles/
+aliases=(
+    d        $PROJECTS/
+    g        $PROJECTS/gap/gid/
+    gs       $PROJECTS/gap/svn/
+    bb       $PROJECTS/gap/brazil-build/
+    bd       $USR/braindump/
+    bin      $USR/bin/
+    dotfiles $USR/dotfiles/
+)
 aliases[df]=$aliases[dotfiles]
 
 cd ${aliases[${1:-d}]}
