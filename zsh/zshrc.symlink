@@ -1,9 +1,3 @@
-# some handy variables
-export USR=$HOME/usr
-export PROJECTS=$HOME/dev
-export DOTFILES=$USR/dotfiles
-export ZSH=$DOTFILES/zsh
-
 # use .zshrc.local for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 if [[ -a ~/.zshrc.local ]]
@@ -50,6 +44,9 @@ function
         source $file
     done
 }
+
+# Highlight commands that contain rm -rf
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 
 
 ######################

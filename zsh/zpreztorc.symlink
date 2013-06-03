@@ -60,6 +60,9 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
+# Set style for oneline format
+zstyle ':prezto:module:git:log:oneline' format '%Cred%h%Creset -%C(yellow)%d%Creset %s  %Cgreen(%cr) %C(blue)<%an>%Creset'
+
 #
 # GNU Utility
 #
@@ -126,10 +129,6 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
   'brackets' \
   'pattern'
-
-# Highlight commands that contain rm -rf
-ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
-
 
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
