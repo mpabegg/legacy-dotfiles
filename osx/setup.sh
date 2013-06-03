@@ -1,3 +1,6 @@
+# DO NOT EXECUTE THIS FILE DIRECTLY
+# it is sourced from ../setup.sh
+
 install_vim_powerline_fonts () {
     info 'installing vim powerline fonts'
 
