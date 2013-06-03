@@ -21,7 +21,7 @@ autoload -U $ZSH/functions/**/*(.:t)
 function
 {
     typeset -U config_files
-    config_files=($(find $DOTFILES -type f -name "*.zsh" -maxdepth 2))
+    config_files=($(find $DOTFILES -maxdepth 2 -type f -name "*.zsh"))
 
     # load the path files
     for file in ${(M)config_files:#*/path.zsh}
