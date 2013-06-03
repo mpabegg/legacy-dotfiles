@@ -16,7 +16,10 @@ Bundle 'gmarik/vundle'
 Bundle 'matthewtodd/vim-twilight'
 
 " Awesome solarized
-Bundle 'altercation/vim-colors-solarized'
+" Bundle 'altercation/vim-colors-solarized'
+
+" Hipster 80s
+Bundle 'chriskempson/base16-vim'
 
 " FuzzyFinder provides convenient ways to quickly reach the
 " buffer/file/command/bookmark/tag you want. FuzzyFinder searches with the

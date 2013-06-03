@@ -21,5 +21,6 @@ else
     set background=dark
 endif
 
-let g:solarized_visibility="high"
-colorscheme solarized
+" let g:solarized_visibility="high"
+" colorscheme solarized
+colorscheme base16-eighties
