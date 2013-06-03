@@ -15,3 +15,8 @@ alias l='ls -lAh'
 alias ll='ls -l'
 alias la='ls -lA'
 alias sl=ls # often screw this up
+
+# Git related
+# alias gs='git status -sb'
+# alias ga='git add'
+# alias gaa='git add -A'
