@@ -21,3 +21,4 @@ alias sl=ls # often screw this up
 # alias ga='git add'
 # alias gaa='git add -A'
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short --branch'
+alias gwm='git mv'
