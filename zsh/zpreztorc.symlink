@@ -20,6 +20,11 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
+# Especially the last three should be (in this order):
+# - fasd
+# - syntax-highlighting
+# - history-substring-search
+# - prompt
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
@@ -29,8 +34,14 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
-  'syntax-highlighting'
+  'archive' \
+  'git' \
+  'osx' \
+  'tmux' \
+  'fasd' \
+  'syntax-highlighting' \
+  'history-substring-search' \
+  'prompt'
 
 #
 # Editor
@@ -111,7 +122,15 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #   'pattern' \
 #   'cursor' \
 #   'root'
-#
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern'
+
+# Highlight commands that contain rm -rf
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+
+
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
 #   'builtin' 'bg=blue' \
