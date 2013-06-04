@@ -22,3 +22,9 @@ alias sl=ls # often screw this up
 # alias gaa='git add -A'
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short --branch'
 alias gwm='git mv'
+
+# Git svn aliases (gv.)
+alias gvr='git svn rebase'
+alias gvd='git svn dcommit'
+alias gvf='git svn fetch'
+alias gvi='git svn info'
