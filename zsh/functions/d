@@ -6,9 +6,9 @@ aliases=(
     g        $PROJECTS/gap/gid/
     gs       $PROJECTS/gap/svn/
     bb       $PROJECTS/gap/brazil-build/
-    bd       $USR/braindump/
+    bd       $BRAINDUMP
     bin      $USR/bin/
-    dotfiles $USR/dotfiles/
+    dotfiles $DOTFILES
 )
 aliases[df]=$aliases[dotfiles]
 

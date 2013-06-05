@@ -10,6 +10,7 @@ export USR=$HOME/usr
 export PROJECTS=$HOME/dev
 export DOTFILES=$USR/dotfiles
 export ZSH=$DOTFILES/zsh
+export BRAINDUMP=$USR/braindump
 
 #
 # Browser
