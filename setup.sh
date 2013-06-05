@@ -32,6 +32,9 @@ clone_dotfiles () {
         info "cloning sgeb/dotfiles.git to $DOTFILES_ROOT"
         git clone --recursive -q https://github.com/sgeb/dotfiles.git $DOTFILES_ROOT
         success "cloned sgeb/dotfiles.git to $DOTFILES_ROOT"
+
+        # Execute the local script to get an interactive stdin script
+        exec $DOTFILES_ROOT/setup.sh
     fi
 }
 
