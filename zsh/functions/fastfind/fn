@@ -1,16 +1,21 @@
-if (($+1)) then
+(( ! $+_FFOUND )) && return
+
+if (( $+1 )) then
+    # print the requested file
     # the first line in $_FFOUND is the path
-    local f="${_FFOUND[$(($1+1))]}"
-    local p="${_FFOUND[1]}"
+    (( i = $1 < 0 ? $1 : $1 + 1 ))
+    f="${_FFOUND[$i]}"
+    p="${_FFOUND[1]}"
     [[ -z "$f" ]] && return
     [[ "$PWD" != "$p" ]] && echo -n "$p/"
     echo "$f"
 else
-    for i in {1..$((${#_FFOUND}-1))}; do
+    # print all files
+    for i in {1..$(( ${#_FFOUND} - 1 ))}; do
         # if we are in an interactive terminal (not pipe)
         # prepend the number
         [[ -t 1 ]] && printf "% 4d " $i
         fn $i
     done
-    unset i
 fi
+unset i f p
