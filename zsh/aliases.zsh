@@ -2,7 +2,7 @@
 unalias d 2>/dev/null
 
 alias dns-flush="sudo killall -HUP mDNSResponder"
-alias alias-search="alias | grep -i"
+alias als="alias | grep -i"
 
 # Basic directory operations
 alias pu='pushd'
