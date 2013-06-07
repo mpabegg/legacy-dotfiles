@@ -2,24 +2,29 @@
 <root>
   <list>
     <item>
-      <name>Space Cadet Mode</name>
-      <appendix>This mode emulates a few of the features of the Space Cadet keyboard.</appendix>
-      <appendix>It also adds a few other helpful mappings.</appendix>
-      <appendix>It requires the Unicode Hex Input keyboard layout for the Greek and Math layers.</appendix>
-      <appendix>More info at http://stevelosh.com/blog/2012/10/a-modern-space-cadet/</appendix>
+      <name>Optimized Keyboard For The Win!</name>
+      <appendix>Features:</appendix>
+      <appendix>- capslock alone => escape (needs native osx modifier key capslock=>ctrl)</appendix>
+      <appendix>- capslock + another key => control_l (needs native osx modifier key capslock=>ctrl)</appendix>
+      <appendix>- escape => disable or forward delete</appendix>
+      <appendix>- force correct use of shift keys</appendix>
+      <appendix>- both shifts simultaneously => toggle pass-through mode</appendix>
+      <appendix>- shift (L/R) alone => parentheses (L/R)</appendix>
+      <appendix>- shift (L/R) + another key => shift (L/R)</appendix>
+      <appendix>- left control => hyper (Control + Shift + Option + Command for custom keyboard shortcuts)</appendix>
 
       <!-- already provided by default KeyRemap4MacBook, but duplicated here to track in git -->
       <item>
-        <name>Control_L to Control_L</name>
-        <appendix>(+ When you type Control_L only, send Escape)</appendix>
+        <name>Control_L => Escape (alone) or Control_L (+ another key)</name>
+        <appendix>(needs native osx modifier key capslock=>ctrl)</appendix>
         <identifier>private.ctrl_l_to_ctrl_l_escape</identifier>
 
         <autogen>__KeyOverlaidModifier__ KeyCode::CONTROL_L, KeyCode::CONTROL_L, KeyCode::ESCAPE</autogen>
       </item>
-      
+
       <!-- already provided by default KeyRemap4MacBook, but duplicated here to track in git -->
       <item>
-        <name>Disable Escape</name>
+        <name>Escape => disable</name>
         <appendix>(force yourself to use Control_L instead)</appendix>
         <identifier>private.disable_escape</identifier>
 
@@ -28,15 +33,16 @@
 
       <!-- already provided by default KeyRemap4MacBook, but duplicated here to track in git -->
       <item>
-        <name>Escape to forward_delete</name>
+        <name>Escape => Forward delete</name>
+        <appendix>(force yourself to use Control_L instead)</appendix>
         <identifier>private.escape_to_forward_delete</identifier>
 
         <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::FORWARD_DELETE</autogen>
       </item>
 
       <item>
-        <name>Force yourself to use the correct shift keys.</name>
-        <identifier>space_cadet.force_correct_shifts</identifier>
+        <name>Force correct use of shift keys</name>
+        <identifier>private.force_correct_shifts</identifier>
 
         <autogen>--KeyToKey-- KeyCode::BACKQUOTE,     ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::VK_NONE</autogen>
         <autogen>--KeyToKey-- KeyCode::KEY_1,         ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::VK_NONE</autogen>
@@ -95,14 +101,19 @@
       </item>
 
       <item>
-        <name>Hold Fn to toggle "Pass Through Mode"</name>
-        <!-- identifier needs to start with "passthrough" -->
-        <identifier>passthrough.privatefn</identifier>
+        <name>Both shifts simultaneously => toggle pass-through mode</name>
+        <!-- identifier must start with "passthrough" -->
+        <identifier>passthrough.private_both_shifts</identifier>
         <autogen>
-          __HoldingKeyToKey__
-          KeyCode::FN,
-          KeyCode::FN,
-          KeyCode::VK_NONE,
+          __KeyToKey__
+          KeyCode::SHIFT_L, ModifierFlag::SHIFT_R,
+          KeyCode::VK_LOCK_ALL_FORCE_OFF,
+          KeyCode::VK_CONFIG_TOGGLE_notsave_passthrough,
+          Option::NOREPEAT,
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::SHIFT_R, ModifierFlag::SHIFT_L,
           KeyCode::VK_LOCK_ALL_FORCE_OFF,
           KeyCode::VK_CONFIG_TOGGLE_notsave_passthrough,
           Option::NOREPEAT,
@@ -110,45 +121,39 @@
       </item>
 
       <item>
-        <name>Shifts to Parentheses</name>
-        <appendix>Shifts, when pressed alone, type parentheses.</appendix>
-        <appendix>When used with other keys they're normal shifts.</appendix>
+        <name>Shift => Parentheses</name>
+        <appendix>Shift (L/R) alone => Parentheses (L/R)</appendix>
+        <appendix>Shift (L/R) + another key => Shift (L/R)</appendix>
 
-        <identifier>space_cadet.shifts_to_parens</identifier>
+        <identifier>private.shifts_to_parens</identifier>
 
         <!-- This is the basic mapping. -->
         <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_R</autogen>
 
-        <!--
-          Remap the "rolls" of () and )( because it's too easy to hit one
-          before finishing the other, and there's no other reason to be
-          pressing both shift keys at once anyway
-          -->
-          <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
-          <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+        <!-- Remap the "rolls" of () and )( because it's too easy to hit one
+        before finishing the other, and there's no other reason to be
+        pressing both shift keys at once anyway -->
+        <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+        <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
 
-          <!--
-            Remap Rshift+Space to ') ', because when typing an end paren and
-            then a space I tend to hit space before I let go of rshift.
-            -->
-            <autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
-          </item>
-          <item>
-            <name>Remap Left Control to Hyper</name>
-            <appendix>OS X doesn't have a Hyper. This maps Left Control to Control + Shift + Option + Command.</appendix>
-            <appendix>You can use this key in your own custom keyboard shortcuts you create in apps.</appendix>
+        <!-- Remap Rshift+Space to ') ', because when typing an end paren and
+        then a space I tend to hit space before I let go of rshift. -->
+        <autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
+      </item>
 
-            <identifier>space_cadet.left_control_to_hyper</identifier>
+      <item>
+        <name>Left control => Hyper (Control + Shift + Option + Command for custom keyboard shortcuts)</name>
+        <identifier>private.left_control_to_hyper</identifier>
 
-            <autogen>
-              --KeyToKey--
-              KeyCode::F19,
+        <autogen>
+          --KeyToKey--
+          KeyCode::F19,
 
-              KeyCode::COMMAND_L,
-              ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-            </autogen>
-          </item>
-        </item>
-      </list>
-    </root>
+          KeyCode::COMMAND_L,
+          ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+    </item>
+  </list>
+</root>
