@@ -1,3 +1,0 @@
-FFOUND_PWD=${PWD}
-eval "FFOUND=($(find "$PWD" -iname "*$2*" -type "$1"))"
-fp

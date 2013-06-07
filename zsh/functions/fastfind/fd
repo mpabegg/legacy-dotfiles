@@ -1,1 +1,3 @@
-_ff_myfind d "$1"
+setopt LOCAL_OPTIONS NULL_GLOB
+_FFOUND=($PWD (#l)**/*$1*(/))
+fn

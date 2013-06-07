@@ -1,1 +1,2 @@
-cat "$(fn $1)"
+# without arg, call with all files/dirs in $_FFOUND as arg
+cat "${(f)$(fn $1)}"

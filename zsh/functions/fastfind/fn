@@ -1,4 +1,16 @@
-item=${FFOUND[$1]}
-[ -z "$item" ] && return
-[ "$PWD" != "$FFOUND_PWD" ] && echo -n $FFOUND_PWD/
-echo ${item##$FFOUND_PWD/}
+if (($+1)) then
+    # the first line in $_FFOUND is the path
+    local f="${_FFOUND[$(($1+1))]}"
+    local p="${_FFOUND[1]}"
+    [[ -z "$f" ]] && return
+    [[ "$PWD" != "$p" ]] && echo -n "$p/"
+    echo "$f"
+else
+    for i in {1..$((${#_FFOUND}-1))}; do
+        # if we are in an interactive terminal (not pipe)
+        # prepend the number
+        [[ -t 1 ]] && printf "% 4d " $i
+        fn $i
+    done
+    unset i
+fi

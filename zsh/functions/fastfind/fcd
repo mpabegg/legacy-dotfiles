@@ -1,11 +1,10 @@
-local DIR
-if (($+1));
-then
-    DIR=$(fn $1)
-    [ ! -d "$DIR" ] && DIR=$(dirname $DIR)
-else
-    DIR=${FFOUND_PWD}
+dir="${(f)_FFOUND[1]}"
+
+if (($+1)) then
+    dir="${(f)$(fn $1)}"
+    [[ ! -d "$dir" ]] && dir="${dir:h}"
 fi
 
-cd "$DIR"
+cd "$dir"
 pwd
+unset dir
