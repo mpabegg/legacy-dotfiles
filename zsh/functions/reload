@@ -1,0 +1,9 @@
+# reload zshrc or function
+
+if [ -z "$1" ]
+then
+    . ~/.zshrc
+else
+    unfunction $1
+    autoload -U $1
+fi
