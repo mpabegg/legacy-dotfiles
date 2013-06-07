@@ -93,7 +93,22 @@
         <autogen>--KeyToKey-- KeyCode::DOT,           ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::VK_NONE</autogen>
         <autogen>--KeyToKey-- KeyCode::SLASH,         ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::VK_NONE</autogen>
       </item>
-      
+
+      <item>
+        <name>Hold Fn to toggle "Pass Through Mode"</name>
+        <!-- identifier needs to start with "passthrough" -->
+        <identifier>passthrough.privatefn</identifier>
+        <autogen>
+          __HoldingKeyToKey__
+          KeyCode::FN,
+          KeyCode::FN,
+          KeyCode::VK_NONE,
+          KeyCode::VK_LOCK_ALL_FORCE_OFF,
+          KeyCode::VK_CONFIG_TOGGLE_notsave_passthrough,
+          Option::NOREPEAT,
+        </autogen>
+      </item>
+
       <item>
         <name>Shifts to Parentheses</name>
         <appendix>Shifts, when pressed alone, type parentheses.</appendix>
