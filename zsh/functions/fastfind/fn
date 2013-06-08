@@ -1,4 +1,4 @@
-(( ! $+_FFOUND )) && return
+(( ! $+_FFOUND || ${#_FFOUND} == 1 )) && return
 
 if (( $+1 )) then
     # print the requested file
