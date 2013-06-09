@@ -177,3 +177,6 @@ Bundle 'vim-coffee-script'
 
 " Show git status / git diff in the vim gutter
 Bundle "airblade/vim-gitgutter"
+
+" Syntax highlighting for markdown
+Bundle 'tpope/vim-markdown'
