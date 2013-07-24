@@ -5,6 +5,7 @@ aliases=(
     d        $PROJECTS/
     g        $PROJECTS/gap/gid/
     gs       $PROJECTS/gap/svn/
+    gd       $PROJECTS/gap/d2c/
     bb       $PROJECTS/gap/brazil-build/
     bd       $BRAINDUMP
     bin      $USR/bin/

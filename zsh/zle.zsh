@@ -37,3 +37,6 @@ else
     bindkey "^J" self-insert
 fi
 
+# alt+.: insert last argument of previous command
+bindkey '\e.' insert-last-word
+
