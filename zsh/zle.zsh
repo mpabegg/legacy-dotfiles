@@ -18,8 +18,8 @@ bindkey -s '\eP' '^Udirs -v^M'
 # alt+l: execute 'ls'
 bindkey -s '\el' '^Uls^M'
 
-# alt+L: execute 'ls -l'
-bindkey -s '\eL' '^Uls -l^M'
+# alt+L: execute 'ls -lA'
+bindkey -s '\eL' '^Uls -lA^M'
 
 # alt+v: pipe current command to view
 bindkey -s '\ev' '^E 2>&1 | view -^M'
