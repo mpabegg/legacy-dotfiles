@@ -22,6 +22,9 @@ alias sl=ls # often screw this up
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short --branch'
 alias gwm='git mv'
 
+# Delete branch from remote origin
+alias gpx='git push origin --delete'
+
 # Git svn aliases (gv.)
 alias gvr='git svn rebase'
 alias gvd='git svn dcommit'
