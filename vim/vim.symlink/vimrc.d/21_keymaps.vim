@@ -11,6 +11,8 @@ nnoremap ' `
 " map j and k to move inside wrapped lines
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Fast saving
 nnoremap <leader>w :w!<cr>
