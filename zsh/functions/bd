@@ -12,36 +12,43 @@ then
     return 2
 fi
 
+search_file() {
+    gawk '
+        BEGIN {
+            RS = "^";
+            FS = "^";
+            OFS = "";
+            ORS = "";
+            IGNORECASE = 1;
+            retcode = 1;
+        }
+
+        # store the current record in `braindump`
+        # prepend filename to current record so that it gets matched as well
+        {
+            braindump = $0;
+            $0 = FILENAME "\n" $0;
+        }
+
+        '$PATTERN' {
+            retcode = 0;
+            print "===\n>>> " FILENAME "\n===\n";
+            print braindump "\n";
+        }
+
+        END {
+            exit retcode;
+        }
+    ' $1
+}
+
+RET=1
 PATTERN="/$1/$(printf ' && /%s/' "${@:2}")"
 
-gawk '
-    BEGIN {
-        RS = "\n===\n";
-        FS = "\n===\n";
-        OFS = "";
-        ORS = "";
-        IGNORECASE = 1;
-        rc = 2;
-    }
+pushd $BRAINDUMP.single
+while IFS= read -d $'\0' -r file; do
+    search_file $(basename $file) && RET=0
+done < <(find . -type f \( -name '*.txt' -o -name '*.md' \) -print0)
+popd
 
-    BEGINFILE {
-        fnprinted = 0;
-    }
-
-    '"$PATTERN"' {
-        rc = 0;
-        if (fnprinted == 0) {
-            print "===\n>>> " FILENAME "\n";
-            fnprinted = 1;
-        }
-        print "===\n" $0 "\n";
-    }
-
-    END {
-    if (rc == 0)
-        print "===\n";
-        exit rc;
-    }
-' $BRAINDUMP/**.txt $BRAINDUMP/**.md
-
-return $?
+return $RET
