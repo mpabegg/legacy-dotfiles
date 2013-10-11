@@ -11,6 +11,8 @@
       <appendix>- both shifts simultaneously => toggle pass-through mode</appendix>
       <appendix>- shift (L/R) alone => parentheses (L/R)</appendix>
       <appendix>- shift (L/R) + another key => shift (L/R)</appendix>
+      <appendix>- command (L/R) alone => curly braces (L/R)</appendix>
+      <appendix>- command (L/R) + another key => command (L/R)</appendix>
       <appendix>- left control => hyper (Control + Shift + Option + Command for custom keyboard shortcuts)</appendix>
 
       <!-- already provided by default KeyRemap4MacBook, but duplicated here to track in git -->
@@ -128,18 +130,36 @@
         <identifier>private.shifts_to_parens</identifier>
 
         <!-- This is the basic mapping. -->
+        <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
-        <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_R</autogen>
 
         <!-- Remap the "rolls" of () and )( because it's too easy to hit one
         before finishing the other, and there's no other reason to be
         pressing both shift keys at once anyway -->
-        <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+        <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
 
         <!-- Remap Rshift+Space to ') ', because when typing an end paren and
         then a space I tend to hit space before I let go of rshift. -->
         <autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
+      </item>
+
+      <item>
+        <name>Command => Parentheses</name>
+        <appendix>Command (L/R) alone => Curly braces (L/R)</appendix>
+        <appendix>Command (L/R) + another key => Command (L/R)</appendix>
+
+        <identifier>private.commands_to_curly_braces</identifier>
+
+        <!-- This is the basic mapping. -->
+        <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, ModifierFlag::COMMAND_L | ModifierFlag::NONE, KeyCode::COMMAND_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
+        <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, ModifierFlag::COMMAND_R | ModifierFlag::NONE, KeyCode::COMMAND_R, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+
+        <!-- Remap the "rolls" of {} and }{ because it's too easy to hit one
+        before finishing the other, and there's no other reason to be
+        pressing both command keys at once anyway -->
+        <autogen>--KeyToKey-- KeyCode::COMMAND_R, ModifierFlag::COMMAND_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+        <autogen>--KeyToKey-- KeyCode::COMMAND_L, ModifierFlag::COMMAND_R, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
       </item>
 
       <item>
