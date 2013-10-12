@@ -137,5 +137,81 @@ install_keyremap4macbook_config () {
     done
 }
 
+compile_osa () {
+    osacompile -o "$2" "$1"
+    success "compiled applescript $1 to $2"
+}
+
+install_applescripts () {
+    info 'installing applescripts'
+
+    overwrite_all=false
+    backup_all=false
+    skip_all=false
+
+    sources=($DOTFILES_ROOT/osx/applescripts/*.scpt)
+    dest_dir="$HOME/Applications"
+    mkdir -p "$dest_dir"
+    for source in "${sources[@]}"
+    do
+        dest="$dest_dir/`basename \"${source%.*}\"`.app"
+
+        if [ -f "$dest" ] || [ -d "$dest" ]
+        then
+
+            overwrite=false
+            backup=false
+            skip=false
+
+            if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
+            then
+                user "File already exists: `basename \"$source\"`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+                read -n 1 action
+
+                case "$action" in
+                    o )
+                        overwrite=true;;
+                    O )
+                        overwrite_all=true;;
+                    b )
+                        backup=true;;
+                    B )
+                        backup_all=true;;
+                    s )
+                        skip=true;;
+                    S )
+                        skip_all=true;;
+                    * )
+                        ;;
+                esac
+            fi
+
+            if [ "$overwrite" == "true" ] || [ "$overwrite_all" == "true" ]
+            then
+                rm -rf "$dest"
+                success "removed $dest"
+            fi
+
+            if [ "$backup" == "true" ] || [ "$backup_all" == "true" ]
+            then
+                mv "$dest" "$dest"\.backup
+                success "moved $dest to $dest.backup"
+            fi
+
+            if [ "$skip" == "false" ] && [ "$skip_all" == "false" ]
+            then
+                compile_osa "$source" "$dest"
+            else
+                success "skipped $source"
+            fi
+
+        else
+            compile_osa "$source" "$dest"
+        fi
+
+    done
+}
+
 install_vim_powerline_fonts
 install_keyremap4macbook_config
+install_applescripts
