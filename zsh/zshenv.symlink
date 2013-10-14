@@ -25,8 +25,9 @@ fi
 #
 
 export EDITOR='vim'
-export VISUAL='vim'
+export VISUAL='gvim'
 export PAGER='less'
+export MANPAGER="/bin/sh -c \"col -b | vim -R -c 'set ft=man ts=8 nomod nolist nonu noma' -c 'nmap q :q<cr>' -\""
 
 #
 # Language
