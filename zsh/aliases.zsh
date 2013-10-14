@@ -4,6 +4,8 @@ unalias d 2>/dev/null
 alias dns-flush="sudo killall -HUP mDNSResponder"
 alias als="alias | grep -i --"
 
+alias ack="nocorrect ack --color-lineno=yellow --color-filename=blue --color-match='black on_red'"
+
 # Basic directory operations
 alias pu='pushd'
 alias po='popd'
