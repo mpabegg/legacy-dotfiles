@@ -3,6 +3,7 @@
 
 " map ; to :
 nnoremap ; :
+vnoremap ; :
 
 " map ` to ' and vice-versa
 nnoremap ` '
