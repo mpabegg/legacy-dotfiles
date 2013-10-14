@@ -106,3 +106,12 @@ bind-key ] command-prompt -p "swap current pane to:"  "swap-pane -d -s:. -t':.%%
 
 # bind C-] to swap two panes with focus switching to new pane at currect location
 bind-key C-] command-prompt -p "swap current pane from:"  "swap-pane -s:. -t':.%%'"
+
+# Split windows similar to vim
+bind-key v split-window -h
+bind-key ^v split-window -h
+bind-key s split-window
+bind-key ^s split-window
+
+# Restore the binding to choose-tree
+bind-key S choose-tree
