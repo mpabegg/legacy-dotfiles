@@ -180,3 +180,6 @@ Bundle "airblade/vim-gitgutter"
 
 " Syntax highlighting for markdown
 Bundle 'tpope/vim-markdown'
+
+" Gradle support
+Bundle 'tfnico/vim-gradle'
