@@ -6,6 +6,9 @@ alias als="alias | grep -i --"
 
 alias ack="nocorrect ack --color-lineno=yellow --color-filename=blue --color-match='black on_red'"
 
+alias be='bundle exec'
+alias vundle-install='vim +BundleInstall +qall'
+
 # Basic directory operations
 alias pu='pushd'
 alias po='popd'
