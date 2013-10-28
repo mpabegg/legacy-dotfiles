@@ -32,6 +32,10 @@ nnoremap <leader>cv "+p
 nnoremap <silent> <Leader>h ml:execute 'match Search /\%'.line('.').'l/'<CR>
 nnoremap <silent> <Leader>H ml:execute 'match'<CR>
 
+" Map space to / (search) and c-space to ? (backgwards search)
+map <space> /
+map <c-space> ?
+map <silent> <leader><cr> :nohlsearch<cr>
 
 """"""""""""""""""""""""""""""
 " => Tabs related

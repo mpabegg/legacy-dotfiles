@@ -152,10 +152,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map space to / (search) and c-space to ? (backgwards search)
-map <space> /
-map <c-space> ?
-map <silent> <leader><cr> :nohlsearch<cr>
 
 " Smart way to move btw. windows
 map <C-j> <C-W>j
