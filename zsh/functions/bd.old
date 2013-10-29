@@ -42,6 +42,6 @@ gawk '
         print "===\n";
         exit rc;
     }
-' $BRAINDUMP/**.txt $BRAINDUMP/**.md
+' $BRAINDUMP.old/**.txt $BRAINDUMP.old/**.md
 
 return $?

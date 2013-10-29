@@ -45,10 +45,20 @@ search_file() {
 RET=1
 PATTERN="/$1/$(printf ' && /%s/' "${@:2}")"
 
-pushd $BRAINDUMP.single
+if [[ "$PWD" != "$BRAINDUMP" ]]
+then
+    NEED_POPD=true
+    pushd "$BRAINDUMP"
+fi
+ 
 while IFS= read -d $'\0' -r file; do
     search_file $(basename $file) && RET=0
 done < <(find . -type f \( -name '*.txt' -o -name '*.md' \) -print0)
-popd
+
+if [[ -n $NEED_POPD ]]
+then
+    popd
+    unset NEED_POPD
+fi
 
 return $RET
