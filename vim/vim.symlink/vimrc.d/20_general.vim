@@ -182,7 +182,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
 " When pressing <leader>cd switch to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>
+map <leader>cd :cd %:p:h<cr>:pwd<CR>
 
 
 command! Bclose call <SID>BufcloseCloseIt()
