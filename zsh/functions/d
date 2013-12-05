@@ -7,7 +7,9 @@ aliases=(
     gs       $PROJECTS/gap/svn/
     gd       $PROJECTS/gap/d2c/
     bb       $PROJECTS/gap/brazil-build/
+    oc       $PROJECTS/sg/opencash/
     bd       $BRAINDUMP
+    b        $PROJECTS/sg/sgeb.me/
     bin      $USR/bin/
     dotfiles $DOTFILES
 )
