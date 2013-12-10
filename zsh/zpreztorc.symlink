@@ -102,8 +102,8 @@ zstyle ':prezto:module:prompt' theme 'sgeb'
 
 # Set git repositories to ignore for fancy prompt
 # (big repository = slow prompt)
-zstyle ':prezto:module:prompt:sgeb' gitignore \
-    '~/dev/gap/gid'
+#zstyle ':prezto:module:prompt:sgeb' gitignore \
+#   '~/dev/gp/gd'
 
 #
 # Screen

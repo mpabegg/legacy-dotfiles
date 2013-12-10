@@ -3,10 +3,9 @@
 local -A aliases
 aliases=(
     d        $PROJECTS/
-    g        $PROJECTS/gap/gid/
-    gs       $PROJECTS/gap/svn/
-    gd       $PROJECTS/gap/d2c/
-    bb       $PROJECTS/gap/brazil-build/
+    g        $PROJECTS/gp/svn/
+    gd       $PROJECTS/gp/d2c/
+    bb       $PROJECTS/gp/bb/
     oc       $PROJECTS/sg/opencash/
     bd       $BRAINDUMP
     b        $PROJECTS/sg/sgeb.me/
