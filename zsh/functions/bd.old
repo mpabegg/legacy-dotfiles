@@ -6,9 +6,9 @@ then
     return 1
 fi
 
-if [[ -z "$BRAINDUMP" ]]
+if [[ -z "${BRAINDUMP_DIR}" ]]
 then
-    echo "$0: please set \$BRAINDUMP to the directory holding your braindump files." >&2
+    echo "$0: please set \$BRAINDUMP_DIR to the directory holding your braindump files." >&2
     return 2
 fi
 
@@ -42,6 +42,6 @@ gawk '
         print "===\n";
         exit rc;
     }
-' $BRAINDUMP.old/**.txt $BRAINDUMP.old/**.md
+' ${BRAINDUMP_DIR}.old/**.txt ${BRAINDUMP_DIR}.old/**.md
 
 return $?

@@ -2,15 +2,15 @@
 
 local -A aliases
 aliases=(
-    d        $PROJECTS/
-    g        $PROJECTS/gp/svn/
-    gd       $PROJECTS/gp/d2c/
-    bb       $PROJECTS/gp/bb/
-    oc       $PROJECTS/sg/opencash/
-    bd       $BRAINDUMP
-    b        $PROJECTS/sg/sgeb.me/
-    bin      $USR/bin/
-    dotfiles $DOTFILES
+    d        "$PROJECTS_DIR/"
+    g        "$PROJECTS_DIR/gp/svn/"
+    gd       "$PROJECTS_DIR/gp/d2c/"
+    bb       "$PROJECTS_DIR/gp/bb/"
+    oc       "$PROJECTS_DIR/sg/opencash/"
+    b        "$PROJECTS_DIR/sg/sgeb.me/"
+    bd       "${BRAINDUMP_DIR}"
+    bin      "$USR_DIR/bin/"
+    dotfiles "$DOTFILES_DIR"
 )
 aliases[df]=$aliases[dotfiles]
 

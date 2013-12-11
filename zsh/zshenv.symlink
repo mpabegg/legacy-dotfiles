@@ -6,11 +6,11 @@
 # Some handy directories
 #
 
-export USR=$HOME/usr
-export PROJECTS=$HOME/dev
-export DOTFILES=$USR/dotfiles
-export ZSH=$DOTFILES/zsh
-export BRAINDUMP=$USR/braindump
+export USR_DIR=$HOME/usr
+export PROJECTS_DIR=$HOME/dev
+export DOTFILES_DIR=$USR_DIR/dotfiles
+export ZSH_DIR=$DOTFILES_DIR/zsh
+export BRAINDUMP_DIR=$USR_DIR/braindump
 
 #
 # Browser

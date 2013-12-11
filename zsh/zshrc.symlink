@@ -8,10 +8,10 @@ fi
 # Autoload our custom functions before sourcing the other zsh files so that we
 # can use them there
 
-# Prepend all directories in $ZSH/functions to the fpath
-fpath=($ZSH/functions/**/ $fpath)
-# and autoload all files in $ZSH/functions
-autoload -U $ZSH/functions/**/*(.:t)
+# Prepend all directories in $ZSH_DIR/functions to the fpath
+fpath=($ZSH_DIR/functions/**/ $fpath)
+# and autoload all files in $ZSH_DIR/functions
+autoload -U $ZSH_DIR/functions/**/*(.:t)
 
 # Source Prezto before our own zsh files so that we can override zsh settings
 # and aliases (or unalias awkward ones)
