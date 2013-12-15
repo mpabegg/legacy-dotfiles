@@ -20,3 +20,7 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Once everything is set up, make a backup of the original PATH
+# Happens occasionally that I mess up my PATH
+export PATH_ORIG=$PATH
