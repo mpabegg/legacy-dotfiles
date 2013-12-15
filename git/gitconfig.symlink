@@ -4,6 +4,7 @@
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
+    editor = vim
 
 [branch]
 	autosetupmerge = true
@@ -71,3 +72,5 @@
     added = yellow
     changed = green
     untracked = cyan
+[push]
+	default = simple
