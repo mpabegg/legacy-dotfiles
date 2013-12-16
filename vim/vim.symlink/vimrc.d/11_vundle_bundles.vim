@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 "Bundle 'mbadran/headlights'
 
 " A clone of TextMate's twilight colorscheme
-Bundle 'matthewtodd/vim-twilight'
+" Bundle 'matthewtodd/vim-twilight'
 
 " Awesome solarized
 " Bundle 'altercation/vim-colors-solarized'
@@ -33,7 +33,7 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'kien/ctrlp.vim'
 
 " Shows a window with Most Recently Used files ("Open recent")
-Bundle 'mru.vim'
+" Bundle 'mru.vim'
 
 " A tree explorer plugin for vim
 " README at https://github.com/scrooloose/nerdtree/
@@ -47,11 +47,11 @@ Bundle 'jistr/vim-nerdtree-tabs'
 " and displays any resulting errors to the user. This can be done on demand,
 " or automatically as files are saved.
 " README at https://github.com/scrooloose/syntastic
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 
 " Git wrapper so awesome, it should be illegal
 " README at https://github.com/tpope/vim-fugitive/
-Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-fugitive'
 
 " Syntax, indent, and filetype plugin files for git, gitcommit, gitconfig,
 " gitrebase, and gitsendemail
@@ -67,18 +67,19 @@ Bundle 'Lokaltog/vim-easymotion'
 " The ultimate vim statusline utility.
 " README at https://github.com/Lokaltog/vim-powerline/
 Bundle 'Lokaltog/vim-powerline'
+" Bundle 'molok/vim-smartusline'
 
 " Makes it easy to zoom into and out of a window
-Bundle 'ZoomWin'
+" Bundle 'ZoomWin'
 
 " Matlab bundles
 " Bundle 'sgeb/vim-matlab'
-Bundle 'MatlabFilesEdition'
-Bundle 'djoshea/vim-matlab-fold'
+" Bundle 'MatlabFilesEdition'
+" Bundle 'djoshea/vim-matlab-fold'
 
 " Source code browser (supports C/C++, java, perl, python, tcl, sql, php, and
 " any language that's understood by ctags)
-Bundle 'taglist.vim'
+" Bundle 'taglist.vim'
 
 " Perform all your vim insert mode completions with <tab>
 " README at https://github.com/ervandew/supertab/
@@ -99,7 +100,7 @@ Bundle 'argtextobj.vim'
 
 " Text-object motion for indentations (Python, Coffeescript, ...)
 " <cmd>ii and <cmd>ai
-Bundle 'michaeljsmith/vim-indent-object'
+" Bundle 'michaeljsmith/vim-indent-object'
 
 " Text-object motion for surroundings: parentheses, brackets, quotes, XML tags
 " README at https://github.com/tpope/vim-surround/
@@ -108,7 +109,7 @@ Bundle 'tpope/vim-surround'
 " use ctrl-A/ctrl-X to increment/decrement dates and times
 " default only works on integers
 " README at http://www.vim.org/scripts/script.php?script_id=2120
-Bundle 'tpope/vim-speeddating'
+" Bundle 'tpope/vim-speeddating'
 
 " \\\ to toggle-comment whole line, \\ for target of a motion (\\ap to
 " toggle-comment a paragraph) and \\ in visual mode to toggle-comment selection.
@@ -122,7 +123,7 @@ Bundle 'tpope/vim-commentary'
 " base65 encode/decode ([Y, ]Y) and much more.
 " README at
 " https://github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt
-Bundle 'tpope/vim-unimpaired'
+" Bundle 'tpope/vim-unimpaired'
 
 " Enable repeating supported plugin maps with "."
 Bundle 'tpope/vim-repeat'
@@ -162,13 +163,13 @@ Bundle 'sjl/gundo.vim'
 " Better support for javascript in vim (indentation, ctags and more). Include
 " the plugin htmlindent
 " After installation, run 'rake ctags' inside .vim/bundle/vim-javascript
-Bundle 'pangloss/vim-javascript'
+" Bundle 'pangloss/vim-javascript'
 
 " Color-highlight nested round/square parentheses, brackets and chevrons
 Bundle 'kien/rainbow_parentheses.vim'
 
 " Support for coffee-script
-Bundle 'vim-coffee-script'
+" Bundle 'vim-coffee-script'
 
 " Vim HardMode, disable character-wise navigation to master advanced motions
 " Disables arrow keys, hjkl, page up/down
@@ -182,4 +183,4 @@ Bundle "airblade/vim-gitgutter"
 Bundle 'tpope/vim-markdown'
 
 " Gradle support
-Bundle 'tfnico/vim-gradle'
+" Bundle 'tfnico/vim-gradle'
