@@ -23,7 +23,7 @@ fi
 function
 {
     typeset -U config_files
-    config_files=($(find $DOTFILES -maxdepth 2 -type f -name "*.zsh"))
+    config_files=($(find $DOTFILES_DIR -maxdepth 2 -type f -name "*.zsh"))
 
     # load the path files
     for file in ${(M)config_files:#*/path.zsh}
