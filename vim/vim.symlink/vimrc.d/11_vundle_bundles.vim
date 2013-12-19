@@ -66,7 +66,7 @@ Bundle 'Lokaltog/vim-easymotion'
 
 " The ultimate vim statusline utility.
 " README at https://github.com/Lokaltog/vim-powerline/
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 " Bundle 'molok/vim-smartusline'
 
 " Makes it easy to zoom into and out of a window
@@ -183,4 +183,4 @@ Bundle "airblade/vim-gitgutter"
 Bundle 'tpope/vim-markdown'
 
 " Gradle support
-" Bundle 'tfnico/vim-gradle'
+Bundle 'tfnico/vim-gradle'
