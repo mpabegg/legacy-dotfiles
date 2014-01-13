@@ -1,6 +1,15 @@
 # DO NOT EXECUTE THIS FILE DIRECTLY
 # it is sourced from ../setup.sh
 
+install_homebrew_casks () {
+    info 'installing homebrew casks'
+    brew tap phinze/cask
+    brew install brew-cask
+    # See https://github.com/sindresorhus/quick-look-plugins
+    brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql suspicious-package
+    info 'homebrew casks installed'
+}
+
 install_vim_powerline_fonts () {
     info 'installing vim powerline fonts'
 
@@ -212,6 +221,7 @@ install_applescripts () {
     done
 }
 
+install_homebrew_casks
 install_vim_powerline_fonts
 install_keyremap4macbook_config
 install_applescripts
