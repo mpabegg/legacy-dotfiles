@@ -30,6 +30,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the old regexp engine, fixes slow python and ruby
+" syntax highlighting in newer (buggy) VIM versions
+set re=1
+
 " Sets how many lines of history VIM has to remember
 set history=1000
 
