@@ -24,4 +24,4 @@ endif
 " let g:solarized_visibility="high"
 " colorscheme solarized
 let base16colorspace=256
-colorscheme base16-eighties
+colorscheme base16-eighties-sgeb
