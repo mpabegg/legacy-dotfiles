@@ -10,3 +10,6 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
+
+" Disable blinking cursor
+set gcr=a:blinkon0
