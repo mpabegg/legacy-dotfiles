@@ -199,3 +199,8 @@ nnoremap <silent> <Leader>4 :GundoToggle<CR>
 " <leader>l to goggle between absolute, relative and no line numbers
 nnoremap <silent> <leader>l :exec &nu == &rnu ? "se nu!" : "se rnu!"<cr>
 
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" Toggle paste mode
+noremap <silent> <leader>pp :setlocal paste!<cr>
