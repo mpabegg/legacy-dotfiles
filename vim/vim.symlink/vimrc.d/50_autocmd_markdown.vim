@@ -9,9 +9,10 @@
 
 "   http://css-tricks.com/words-avoid-educational-writing/
 
-highlight TechWordsToAvoid ctermbg=red ctermfg=white
+" highlight TechWordsToAvoid ctermbg=red guibg=red ctermfg=white guifg=white
 function MatchTechWordsToAvoid()
-    match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
+    " match TechWordsToAvoid ....
+    match ErrorMsg /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 autocmd FileType markdown call MatchTechWordsToAvoid()
 autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
