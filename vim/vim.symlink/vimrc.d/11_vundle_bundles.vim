@@ -184,3 +184,6 @@ Bundle 'tpope/vim-markdown'
 
 " Gradle support
 Bundle 'tfnico/vim-gradle'
+
+" Uncover usage problems in your writing
+Bundle 'reedes/vim-wordy'
