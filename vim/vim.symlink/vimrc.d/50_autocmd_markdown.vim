@@ -1,8 +1,13 @@
-" Stolen from https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink
-" Thanks to @pengwynn
+" Config for markdown documents
+
+" Wrap at column 80
+" Re-flow a line with gqq, a paragraph with gq} and the entire doc with gggqG
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Highlight words to avoid in tech writing
 " =======================================
+" Stolen from https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink
+" Thanks to @pengwynn
 "
 "   obviously, basically, simply, of course, clearly,
 "   just, everyone knows, However, So, easy
