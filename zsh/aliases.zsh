@@ -20,12 +20,17 @@ alias ll='ls -l'
 alias la='ls -lA'
 alias sl=ls # often screw this up
 
+####
 # Git related
+####
+#
 # alias gs='git status -sb'
 # alias ga='git add'
 # alias gaa='git add -A'
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short --branch'
 alias gwm='git mv'
+alias gwcx='git clean -ndx'
+alias gwCx='git clean -fdx'
 
 # Delete branch from remote origin
 alias gpx='git push origin --delete'
@@ -35,3 +40,6 @@ alias gvr='git svn rebase'
 alias gvd='git svn dcommit'
 alias gvf='git svn fetch'
 alias gvi='git svn info'
+
+# Squash a branch into the current one (usually master)
+alias gms='git merge --squash'
