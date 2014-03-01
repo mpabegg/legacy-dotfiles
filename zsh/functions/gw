@@ -1,0 +1,8 @@
+# run the gradlw script from a subdirectory
+
+GW="$(upfind gradlew)"
+if [ -z "$GW" ]; then
+    echo "Gradle wrapper not found."
+else
+    $GW $@
+fi
