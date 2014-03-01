@@ -32,6 +32,12 @@ Bundle 'sgeb/vim-base16-eighties-sgeb'
 " Fuzzy file, buffer, mru, tag, etc finder
 Bundle 'kien/ctrlp.vim'
 
+" Native matching extension for ctrlp (much faster)
+" After bundle installation:
+" > cd ~/.vim/bundle/ctrlp-cmatcher
+" > ./install_linux.sh
+" Bundle 'JazzCore/ctrlp-cmatcher'
+
 " Shows a window with Most Recently Used files ("Open recent")
 " Bundle 'mru.vim'
 
@@ -79,11 +85,22 @@ Bundle 'Lokaltog/vim-easymotion'
 
 " Source code browser (supports C/C++, java, perl, python, tcl, sql, php, and
 " any language that's understood by ctags)
-" Bundle 'taglist.vim'
+Bundle 'taglist.vim'
 
 " Perform all your vim insert mode completions with <tab>
 " README at https://github.com/ervandew/supertab/
-Bundle 'ervandew/supertab'
+" Obsoleted by YouCompleteMe
+" Bundle 'ervandew/supertab'
+
+" Fast, as-you-type, fuzzy-search code completion engine
+" After bundle installation, run:
+" > cd ~/.vim/bundle/YouCompleteMe
+" > ./install.sh --clang-completer --system-libclang # on macosx
+Bundle 'Valloric/YouCompleteMe'
+
+" Another code completion engine
+" Requires a vim build with lua support, check docs (install through brew)
+" Bundle 'Shougo/neocomplete.vim'
 
 " Allows you to run interactive programs inside vim.
 " README at https://github.com/vim-scripts/Conque-Shell
@@ -187,3 +204,7 @@ Bundle 'tfnico/vim-gradle'
 
 " Uncover usage problems in your writing
 Bundle 'reedes/vim-wordy'
+
+" Visually select increasingly larger regions of text
+" Press + to expand the visual selection and _ to shrink it
+Bundle 'terryma/vim-expand-region'
