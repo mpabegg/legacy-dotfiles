@@ -7,6 +7,11 @@ install_homebrew_casks () {
     brew install brew-cask
     # See https://github.com/sindresorhus/quick-look-plugins
     brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql suspicious-package
+
+    # Install MacVim with lua support
+    brew install macvim --with-cscope --with-lua --HEAD
+    brew linkapps
+
     info 'homebrew casks installed'
 }
 
