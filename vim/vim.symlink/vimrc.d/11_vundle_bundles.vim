@@ -98,6 +98,9 @@ Bundle 'taglist.vim'
 " > ./install.sh --clang-completer --system-libclang # on macosx
 Bundle 'Valloric/YouCompleteMe'
 
+" Snippets library that integrates with YouCompleteMe
+Bundle 'SirVer/ultisnips'
+
 " Another code completion engine
 " Requires a vim build with lua support, check docs (install through brew)
 " Bundle 'Shougo/neocomplete.vim'
