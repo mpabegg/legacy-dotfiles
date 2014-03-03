@@ -8,6 +8,7 @@ alias ack="nocorrect ack --color-lineno=yellow --color-filename=blue --color-mat
 
 alias be='bundle exec'
 alias vundle-install='vim +BundleInstall +qall'
+alias marked='open -a marked'
 
 # Basic directory operations
 alias pu='pushd'
