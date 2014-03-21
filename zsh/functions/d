@@ -2,17 +2,16 @@
 
 local -A aliases
 aliases=(
-    d        "$PROJECTS_DIR/"
+    d        "$PROJECTS_DIR/sg"
     g        "$PROJECTS_DIR/gp/svn/"
-    gd       "$PROJECTS_DIR/gp/d2c/"
     bb       "$PROJECTS_DIR/gp/bb/"
     oc       "$PROJECTS_DIR/sg/opencash/"
     b        "$PROJECTS_DIR/sg/sgeb.me/"
-    bd       "${BRAINDUMP_DIR}"
+    bd       "$BRAINDUMP_DIR"
     bin      "$USR_DIR/bin/"
     dotfiles "$DOTFILES_DIR"
+    df       "$DOTFILES_DIR"
 )
-aliases[df]=$aliases[dotfiles]
 
 cd ${aliases[${1:-d}]}
 pwd
