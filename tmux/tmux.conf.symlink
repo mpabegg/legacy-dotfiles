@@ -19,21 +19,12 @@ setw -g monitor-activity on
 # but no verbose message about activity
 set -g visual-activity off
 
-# Make the active pane more visible
-set -g pane-border-bg default
-set -g pane-border-fg default
-set -g pane-active-border-bg default
-set -g pane-active-border-fg red
-
-# Make the active window's name stand out
-set -g status-bg green
-setw -g window-status-current-fg red
-setw -g window-status-current-bg black
-
-# Use color to indicate activity in a background window
-# (Note this is inverted, fg means bg and vice versa.)
-setw -g window-status-activity-fg green
-setw -g window-status-activity-bg red
+# Status bar format
+set-option -g status-position bottom
+set -g status-left ''
+set -g status-right '%a %d-%b %H:%M'
+setw -g window-status-format '#F#I #W '
+setw -g window-status-current-format '#F#I [#W] '
 
 # Show status line messages for 5 second
 set -g display-time 5000
@@ -52,10 +43,6 @@ set -g mouse-select-window on
 # in macosx)
 # set-option -g default-command "reattach-to-user-namespace -l $SHELL"
 set-option -g default-command "reattach-to-user-namespace true >/dev/null 2>&1 && reattach-to-user-namespace -l $SHELL || $SHELL -l"
-
-# Set status fields
-set -g status-left ''
-set -g status-right '%H:%M %d-%b'
 
 # Vi copypaste mode
 set-window-option -g mode-keys vi
@@ -119,3 +106,42 @@ bind-key -n C-S-Right swap-window -t +1
 
 # Restore the binding to choose-tree
 bind-key S choose-tree
+
+
+#### COLOUR
+
+# default statusbar colors
+set-option -g status-bg colour18 # darker gray
+set-option -g status-fg blue
+set-option -g status-attr default
+
+# default window title colors
+set-window-option -g window-status-fg colour20 # bright gray
+set-window-option -g window-status-bg default
+set-window-option -g window-status-attr dim
+
+# active window title colors
+set-window-option -g window-status-current-fg colour17 # dark brown
+set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-attr bright
+
+# indicate activity in a background window
+# (note: identifiers are inverted, fg means bg and vice versa.)
+set-window-option -g window-status-activity-bg colour18 # darker gray
+set-window-option -g window-status-activity-fg colour21 # lighter gray
+set-window-option -g window-status-activity-attr default
+
+# pane border
+set-option -g pane-border-fg colour19 # dark gray
+set-option -g pane-active-border-fg colour16 # light brown
+
+# message text
+set-option -g message-bg colour18 # darker gray
+set-option -g message-fg colour16 # light brown
+
+# pane number display
+set-option -g display-panes-active-colour colour16 # light brown
+set-option -g display-panes-colour colour8 # gray
+
+# clock
+set-window-option -g clock-mode-colour blue
