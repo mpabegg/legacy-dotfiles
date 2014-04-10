@@ -42,3 +42,13 @@ fi
 
 # alt+.: insert last argument of previous command
 bindkey '\e.' insert-last-word
+
+
+### Selecta sweetness
+
+# cdlecta zsh widget to quickly switch folder
+cdlecta() { 
+  cd $(find . -type d | egrep -v "^\.\$|/\.\$|/.svn" | selecta) 
+}
+zle -N cdlecta
+bindkey '\eD' cdlecta
