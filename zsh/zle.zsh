@@ -85,7 +85,7 @@ function _selecta-history-find {
 zle -N _selecta-history-find
 bindkey '\eH' _selecta-history-find
 
-# insert a file or directory at current cursor position in the buffer
+# insert a file at current cursor position in the buffer
 # (uses `ag` which is very fast and ignores .svn, .git, etc by default)
 function _selecta-arg-find {
     trap '' INT
