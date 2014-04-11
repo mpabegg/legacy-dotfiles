@@ -43,12 +43,54 @@ fi
 # alt+.: insert last argument of previous command
 bindkey '\e.' insert-last-word
 
+# menu selection: pick item but stay in the menu
+bindkey -M menuselect '\e^M' accept-and-menu-complete
+
+# Store current line onto the stack, execute another command and pop it
+# on the next prompt (can be single line during multiline command)
+bindkey '\eq' push-line
+
+# Store entire current buffer onto the stack, execute another command and
+# pop it on the next prompt
+bindkey '\eQ' push-input
+
 
 ### Selecta sweetness
 
-# cdlecta zsh widget to quickly switch folder
-cdlecta() { 
-  cd $(find . -type d | egrep -v "^\.\$|/\.\$|/.svn" | selecta) 
+# cd into a folder
+function _selecta-cd-find {
+    zle kill-buffer
+    BUFFER="cd $(find . -type d | egrep -v "^\.\$|/.svn|/.git" | selecta)"
+    zle accept-line
 }
-zle -N cdlecta
-bindkey '\eD' cdlecta
+zle -N _selecta-cd-find
+bindkey '\eD' _selecta-cd-find
+
+# edit a file
+# (uses `ag` which is very fast and ignores .svn, .git, etc by default)
+function _selecta-edit-find {
+    zle kill-buffer
+    BUFFER="${=${VISUAL:-${EDITOR:-nano}}} $(ag --nogroup --nocolor -l . 2>/dev/null | selecta)"
+    zle accept-line
+}
+zle -N _selecta-edit-find
+bindkey '\eE' _selecta-edit-find
+
+# recall history
+function _selecta-history-find {
+    zle kill-buffer
+    zle -U "$(history -n 1 | selecta)"
+    zle redisplay
+}
+zle -N _selecta-history-find
+bindkey '\eH' _selecta-history-find
+
+# insert a file or directory at current cursor position in the buffer
+function _selecta-arg-find {
+    trap '' INT
+    zle -U "$(ag --nogroup --nocolor -l . 2>/dev/null | selecta)"
+    zle redisplay
+    trap - INT
+}
+zle -N _selecta-arg-find
+bindkey '^t' _selecta-arg-find
