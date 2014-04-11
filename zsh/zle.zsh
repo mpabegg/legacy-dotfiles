@@ -44,7 +44,8 @@ fi
 bindkey '\e.' insert-last-word
 
 # menu selection: pick item but stay in the menu
-bindkey -M menuselect '\e^M' accept-and-menu-complete
+# bindkey -N menuselect  # keymap 'menuselect' must be created aforehand
+# bindkey -M menuselect '\e^M' accept-and-menu-complete
 
 # Store current line onto the stack, execute another command and pop it
 # on the next prompt (can be single line during multiline command)
