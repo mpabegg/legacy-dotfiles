@@ -60,7 +60,7 @@ bindkey '\eQ' push-input
 # cd into a folder
 function _selecta-cd-find {
     zle kill-buffer
-    BUFFER="cd $(find . -type d 2>/dev/null | egrep -v "^\.\$|/.svn|/.git" | selecta)"
+    BUFFER="cd $(find . -type d 2>/dev/null | egrep -v '^.$|/.svn|/.git' | selecta)"
     zle accept-line
 }
 zle -N _selecta-cd-find
@@ -88,7 +88,7 @@ bindkey '\eH' _selecta-history-find
 # insert a file or directory at current cursor position in the buffer
 function _selecta-arg-find {
     trap '' INT
-    zle -U "$(find . -type d 2>/dev/null | egrep -v "^\.\$|/.svn|/.git" | selecta)"
+    zle -U "$(find . 2>/dev/null | egrep -v '^.$|/.svn|/.git' | selecta)"
     zle redisplay
     trap - INT
 }
