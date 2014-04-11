@@ -42,7 +42,7 @@ set -g mouse-select-window on
 # use reattach-to-user-namespace if available (work around sharing of pasteboard
 # in macosx)
 # set-option -g default-command "reattach-to-user-namespace -l $SHELL"
-set-option -g default-command "reattach-to-user-namespace true >/dev/null 2>&1 && reattach-to-user-namespace -l $SHELL || $SHELL -l"
+set-option -g default-command "if `reattach-to-user-namespace true >/dev/null 2>&1`; then reattach-to-user-namespace -l $SHELL; else $SHELL -l; fi"
 
 # Vi copypaste mode
 set-window-option -g mode-keys vi
