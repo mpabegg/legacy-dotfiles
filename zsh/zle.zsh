@@ -80,7 +80,7 @@ bindkey '\eE' _selecta-edit-find
 # recall history
 function _selecta-history-find {
     zle kill-buffer
-    zle -U "$(history -n 1 | selecta)"
+    zle -U "$(history -rn 1 | selecta)"
     zle redisplay
 }
 zle -N _selecta-history-find
