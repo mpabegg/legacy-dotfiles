@@ -95,3 +95,19 @@ function _selecta-arg-find {
 }
 zle -N _selecta-arg-find
 bindkey '^t' _selecta-arg-find
+
+# insert the relative path to the root of the current git repo
+# (prints nothing if not inside a git repo)
+function _git-root-relative {
+    zle -U "$(git rev-parse --show-cdup 2>/dev/null)"
+}
+zle -N _git-root-relative
+bindkey "\er" _git-root-relative
+
+# insert the absolute path to the root of the current git repo
+# (prints nothing if not inside a git repo)
+function _git-root-absolute {
+    zle -U "$(git rev-parse --show-toplevel 2>/dev/null)"
+}
+zle -N _git-root-absolute
+bindkey "\eR" _git-root-absolute
