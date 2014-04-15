@@ -87,14 +87,14 @@ zle -N _selecta-history-find
 bindkey '\eH' _selecta-history-find
 
 # insert a file or directory at current cursor position in the buffer
-function _selecta-arg-find {
+function _selecta-file-dir {
     trap '' INT
     zle -U "$(find . 2>/dev/null | egrep -v '^.$|/.svn|/.git' | selecta)"
     zle redisplay
     trap - INT
 }
-zle -N _selecta-arg-find
-bindkey '^t' _selecta-arg-find
+zle -N _selecta-file-dir
+bindkey '^t' _selecta-file-dir
 
 # insert the relative path to the root of the current git repo
 # (prints nothing if not inside a git repo)
