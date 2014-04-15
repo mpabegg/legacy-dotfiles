@@ -89,7 +89,9 @@ bindkey '\eH' _selecta-history-find
 # insert a file or directory at current cursor position in the buffer
 function _selecta-file-dir {
     trap '' INT
-    zle -U "$(find . 2>/dev/null | egrep -v '^.$|/.svn|/.git' | selecta)"
+    zle -U "$(find . 2>/dev/null \
+        | egrep -v '^.$|/.svn|/.git' \
+        | selecta)"
     zle redisplay
     trap - INT
 }
