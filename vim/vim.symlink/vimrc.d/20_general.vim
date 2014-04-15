@@ -152,6 +152,8 @@ if exists('+colorcolumn')
     set colorcolumn=80
 endif
 
+set nojoinspaces  " no double-space joining after '.', '?', '!'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
