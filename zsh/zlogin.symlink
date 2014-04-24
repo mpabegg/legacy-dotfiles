@@ -17,9 +17,7 @@ if (( $+commands[fortune] )); then
   print
 fi
 
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin:$PATH
 
 # Once everything is set up, make a backup of the original PATH
 # Happens occasionally that I mess up my PATH

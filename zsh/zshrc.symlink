@@ -122,5 +122,3 @@ function
 # [[ "$OS" == "Darwin" ]] && export LSCOLORS="exfxcxdxbxegedabagacad"
 
 # source "`brew --prefix`/etc/grc.bashrc"
-
-PATH=$PATH:/usr/local/share/npm/bin:$HOME/.rvm/bin
