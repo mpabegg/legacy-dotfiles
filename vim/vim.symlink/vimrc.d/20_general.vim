@@ -97,6 +97,8 @@ set tm=500
 " Set line numbers
 set nu
 
+" Show incomplete commands below the bottom bar
+set showcmd
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Encoding
