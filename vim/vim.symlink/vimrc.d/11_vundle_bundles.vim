@@ -211,3 +211,6 @@ Bundle 'reedes/vim-wordy'
 " Visually select increasingly larger regions of text
 " Press + to expand the visual selection and _ to shrink it
 Bundle 'terryma/vim-expand-region'
+
+" Golang support
+Bundle 'jnwhiteh/vim-golang'
