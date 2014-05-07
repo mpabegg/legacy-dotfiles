@@ -37,6 +37,9 @@ if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
 
+# Golang
+export GOPATH="$PROJECTS_DIR/go"
+
 #
 # Paths
 #
