@@ -7,6 +7,7 @@ aliases=(
     bb       "$PROJECTS_DIR/gp/bb/"
     oc       "$PROJECTS_DIR/sg/opencash/"
     b        "$PROJECTS_DIR/sg/sgeb.me/"
+    go       "$PROJECTS_DIR/go"
     bd       "$BRAINDUMP_DIR"
     bin      "$USR_DIR/bin/"
     dotfiles "$DOTFILES_DIR"
