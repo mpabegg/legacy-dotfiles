@@ -47,6 +47,14 @@ function
     done
 }
 
+# Configure launchd environment variables
+# Not the ideal place to do it here: launchctl will only be configured
+# correctly after opening a shell. On the other hand config depends on
+# variables set in zsh config files and trying to avoid duplication of
+# fragile variables such as $PATH
+launchctl setenv PATH $PATH
+launchctl setenv GOROOT $(go env GOROOT)
+launchctl setenv GOPATH $GOPATH
 
 ######################
 # This file is shared across all environments:
