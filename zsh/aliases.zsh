@@ -10,6 +10,11 @@ alias be='bundle exec'
 alias vundle-install='vim +BundleInstall +qall'
 alias marked='open -a marked'
 
+alias mutt-tw='MUTT_INSTANCE=tw mutt'
+alias mutt-gmail='MUTT_INSTANCE=gmail mutt'
+
+alias go-fmt-all='find . -type f -name "*.go" -not -path "./_*" -exec goimports -w -l {} \;'
+
 # Basic directory operations
 alias pu='pushd'
 alias po='popd'
