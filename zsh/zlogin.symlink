@@ -26,3 +26,6 @@ export PATH=$GOPATH/bin:$PATH
 # Once everything is set up, make a backup of the original PATH
 # Comes in handy when I occasionally mess up my PATH
 export PATH_ORIG=$PATH
+
+# Display an Apple logo with system specs
+archey -c
