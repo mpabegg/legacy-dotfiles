@@ -1,0 +1,6 @@
+t="$1xxxx"
+c="${2:-=}"
+d="${t//?/$c}"
+echo "$d"
+echo "$c $1 $c"
+echo "$d"
