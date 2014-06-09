@@ -171,6 +171,18 @@ defaults write com.apple.BezelServices kDimTime -int 300
 # Disable auto-correct
 # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Disable shift key slow motions
+# 34: All Windows (Slow)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 34 '{enabled = 0;}'
+# 35: Application Windows (Slow)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 35 '{enabled = 0;}'
+# 37: Desktop (Slow)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 37 '{enabled = 0;}'
+# 63: Dashboard (Slow)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 63 '{enabled = 0;}'
+# 76: Activate Spaces (Slow)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 76 '{enabled = 0;}'
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
