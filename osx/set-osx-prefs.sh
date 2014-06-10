@@ -178,6 +178,10 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 34 '{ena
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 35 '{enabled = 0;}'
 # 37: Desktop (Slow)
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 37 '{enabled = 0;}'
+# 40/43: related to Desktop (Slow) and Mission Control (Slow) using mouse
+# buttons, but not sure which one does what
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 40 '{enabled = 0;}'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 43 '{enabled = 0;}'
 # 63: Dashboard (Slow)
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 63 '{enabled = 0;}'
 # 76: Activate Spaces (Slow)
