@@ -13,8 +13,8 @@ alias marked='open -a marked'
 alias mutt-tw='MUTT_INSTANCE=tw mutt'
 alias mutt-gmail='MUTT_INSTANCE=gmail mutt'
 
-alias go-fmt='find . -type f -name "*.go" -not -path "./_*" -exec goimports -w -l {} \;'
-alias go-fmt-all='find . -type f -name "*.go" -exec goimports -w -l {} \;'
+alias go-fmt='find -L . -type f -name "*.go" -not -path "./_*" -exec goimports -w -l {} \;'
+alias go-fmt-all='find -L . -type f -name "*.go" -exec goimports -w -l {} \;'
 
 # Basic directory operations
 alias pu='pushd'
