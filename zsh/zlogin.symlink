@@ -23,6 +23,8 @@ export PATH=$HOME/.rvm/bin:$PATH
 export PATH=$(go env GOROOT)/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+
 # Once everything is set up, make a backup of the original PATH
 # Comes in handy when I occasionally mess up my PATH
 export PATH_ORIG=$PATH
