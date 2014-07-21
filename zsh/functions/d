@@ -3,13 +3,16 @@
 local -A aliases
 aliases=(
     d        "$PROJECTS_DIR/sg"
-    g        "$PROJECTS_DIR/gma/"
-    oc       "$PROJECTS_DIR/sg/opencash/"
-    b        "$PROJECTS_DIR/sg/sgeb.me/"
+    g        "$PROJECTS_DIR/gma"
+    gm       "$PROJECTS_DIR/gma/mars-plus/development/app/mars-plus"
+    gmi      "$PROJECTS_DIR/gma/mars-plus-infra"
+    gmt      "$PROJECTS_DIR/gma/testrunner/mars-plus/development/app/mars-plus"
+    oc       "$PROJECTS_DIR/sg/opencash"
+    b        "$PROJECTS_DIR/sg/sgeb.me"
     tk       "$PROJECTS_DIR/sg/go-tuikit"
     go       "$PROJECTS_DIR/go"
     bd       "$BRAINDUMP_DIR"
-    bin      "$USR_DIR/bin/"
+    bin      "$USR_DIR/bin"
     dotfiles "$DOTFILES_DIR"
     df       "$DOTFILES_DIR"
 )
