@@ -50,3 +50,9 @@ alias gvi='git svn info'
 
 # Squash a branch into the current one (usually master)
 alias gms='git merge --squash'
+
+# git tag aliases (gt.)
+alias gt='git tag'
+alias gtl='git tag -l'
+alias gtx='git tag -d'
+alias gtf='git tag -f'
