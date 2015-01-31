@@ -39,6 +39,10 @@ alias gwm='git mv'
 alias gwcx='git clean -ndx'
 alias gwCx='git clean -fdx'
 
+# Update the ref for head on master
+# e.g. gum <SHA>
+alias gum='git update-ref refs/heads/master'
+
 # Delete branch from remote origin
 alias gpx='git push origin --delete'
 
