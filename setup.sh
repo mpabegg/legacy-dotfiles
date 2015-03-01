@@ -2,7 +2,7 @@
 #
 # Setup dotfiles
 
-DOTFILES_ROOT="$HOME/usr/dotfiles"
+DOTFILES_ROOT="$HOME/.dotfiles"
 
 set -e
 
@@ -29,9 +29,9 @@ fail () {
 clone_dotfiles () {
     if ! [ -d $DOTFILES_ROOT ]
     then
-        info "cloning sgeb/dotfiles.git to $DOTFILES_ROOT"
-        git clone --recursive -q https://github.com/sgeb/dotfiles.git $DOTFILES_ROOT
-        success "cloned sgeb/dotfiles.git to $DOTFILES_ROOT"
+        info "cloning mpabegg/dotfiles.git to $DOTFILES_ROOT"
+        git clone --recursive -q https://github.com/mpabegg/dotfiles.git $DOTFILES_ROOT
+        success "cloned mpabegg/dotfiles.git to $DOTFILES_ROOT"
 
         # Execute the local script to get an interactive stdin script
         exec $DOTFILES_ROOT/setup.sh
