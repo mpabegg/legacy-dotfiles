@@ -8,7 +8,7 @@
 
 export USR_DIR=$HOME/usr
 export PROJECTS_DIR=$HOME/dev
-export DOTFILES_DIR=$USR_DIR/dotfiles
+export DOTFILES_DIR=$HOME/.dotfiles
 export ZSH_DIR=$DOTFILES_DIR/zsh
 export BRAINDUMP_DIR=$USR_DIR/braindump
 
