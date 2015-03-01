@@ -1,7 +1,0 @@
-" Source all files in ~/.vim/vimrc.d/*.vim
-" 
-" Initial idea of letting vim source ~/.vim/plugin/*.vim automatically didn't
-" work because they only get executed _after all the rest and thus breaking
-" Vundle.
-
-runtime! vimrc.d/*.vim
