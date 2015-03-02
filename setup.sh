@@ -138,7 +138,7 @@ install_dotfiles_symlinks
 # If we are on a mac, lets install and setup homebrew
 if [ "$(uname -s)" == "Darwin" ]
 then
-    . osx/setup.sh
+    # . osx/setup.sh
     # info "installing dependencies"
     # if . bin/dot > /tmp/dotfiles-dot 2>&1
     # then
