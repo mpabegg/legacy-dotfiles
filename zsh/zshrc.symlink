@@ -80,7 +80,7 @@ function
 # See file /etc/paths in /macosx/etc/paths inside this repo.
 # if [ "$OS" = "Linux" ]; then
 #   PATH=/sbin:/bin
-#   for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/local/git/bin ~/usr/bin ~/.rvm/bin; do
+#   for p in /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /opt/local/bin /opt/local/sbin /usr/local/git/bin ~/usr/bin ; do
 #     [ -d $p ] && PATH=$p:$PATH
 #   done
 #   export PATH
