@@ -99,11 +99,11 @@ zstyle ':prezto:module:git:log:oneline' format '%Cred%h%Creset -%C(yellow)%d%Cre
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sgeb'
+zstyle ':prezto:module:prompt' theme 'mpabegg'
 
 # Set git repositories to ignore for fancy prompt
 # (big repository = slow prompt)
-#zstyle ':prezto:module:prompt:sgeb' gitignore \
+#zstyle ':prezto:module:prompt:mpabegg' gitignore \
 #   '~/dev/gp/gd'
 
 #
@@ -163,4 +163,3 @@ fi
 
 # Auto-start a remote session when SSH'ing into the box
 zstyle ':prezto:module:tmux:auto-start' remote 'yes'
-
