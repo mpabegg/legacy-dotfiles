@@ -82,7 +82,7 @@ function prompt_mpabegg_setup {
   zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{yellow}═%f%%b'
   zstyle ':prezto:module:git:info:untracked' format ' %%B%F{white}?%f%%b'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' '%F{yellow}(%f$(coalesce "%b" "%p" "%c") %A%B%S%a%d%m%r%U%u%C%F{yellow})%f' \
+    'prompt' '%F{yellow}(%f$(coalesce "%b" "%p" "%c")%A%B%S%a%d%m%r%U%u%C%F{yellow})%f' \
     # 'rprompt' '%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
