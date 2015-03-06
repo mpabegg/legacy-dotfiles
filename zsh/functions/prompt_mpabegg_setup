@@ -89,7 +89,7 @@ function prompt_mpabegg_setup {
   PROMPT='
 %F{red}${_prompt_mpabegg_pwd}%f ${git_info:+${(e)git_info[prompt]}}
 %(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
-  RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %F{green}V%f"}'
+  RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %F{green}V%f"}[%T]'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
