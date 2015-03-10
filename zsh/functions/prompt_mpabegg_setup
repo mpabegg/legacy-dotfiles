@@ -34,6 +34,18 @@ function prompt_mpabegg_should_run_git_info {
   done
 }
 
+function prompt_mpabegg_git_info {
+  if prompt_mpabegg_should_run_git_info && (( $+functions[git-info] )); then
+    git-info
+  else
+    git_info=
+  fi
+}
+
+function prompt_mpabegg_ruby_version {
+  _ruby_version="$(rbenv version-name)"
+}
+
 function prompt_mpabegg_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
@@ -42,12 +54,12 @@ function prompt_mpabegg_precmd {
   prompt_mpabegg_pwd
 
   # Get Git repository information.
-  if prompt_mpabegg_should_run_git_info && (( $+functions[git-info] )); then
-    git-info
-  else
-    git_info=
-  fi
+  prompt_mpabegg_git_info
+
+  # Get ruby version
+  prompt_mpabegg_ruby_version 
 }
+
 
 function prompt_mpabegg_setup {
   setopt LOCAL_OPTIONS
@@ -89,7 +101,7 @@ function prompt_mpabegg_setup {
   PROMPT='
 %F{red}${_prompt_mpabegg_pwd}%f ${git_info:+${(e)git_info[prompt]}}
 %(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
-  RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %F{green}V%f"} [%T]'
+  RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %F{green}V%f"} [${_ruby_version}] [%T]'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
