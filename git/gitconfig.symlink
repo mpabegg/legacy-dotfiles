@@ -1,0 +1,39 @@
+[credential]
+	helper = osxkeychain
+
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+	editor = vim
+
+[branch]
+	autosetupmerge = true
+
+[diff]
+	tool = vimdiff
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red
+	new = green
+	whitespace = red reverse
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[push]
+	default = simple
+[user]
+	name = Matheus Abegg
+	email = matheus.abegg@gmail.com
