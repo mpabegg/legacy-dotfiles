@@ -25,7 +25,7 @@ fi
 #
 
 export EDITOR='vim'
-export VISUAL='gvim'
+export VISUAL='atom'
 export PAGER='less'
 export MANPAGER="/bin/sh -c \"col -b | vim -R -c 'set ft=man ts=8 nomod nolist nonu noma' -c 'nmap q :q<cr>' -\""
 
@@ -84,4 +84,3 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
-
