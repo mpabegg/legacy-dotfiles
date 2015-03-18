@@ -1,5 +1,14 @@
+# ${+name}
+# If name is the name of a set parameter ‘1’ is substituted, otherwise ‘0’ is substituted.
+
+# ${#spec}
+# If spec is one of the above substitutions, substitute the length in characters of the result instead of the result itself.
+# If spec is an array expression, substitute the number of elements of the result.
+# This has the side-effect that joining is skipped even in quoted forms, which may affect other sub-expressions in spec.
+# Note that ‘^’, ‘=’, and ‘~’, below, must appear to the left of ‘#’ when these forms are combined.
 (( ! $+_FFOUND || ${#_FFOUND} == 1 )) && return
 
+# ${+name}
 if (( $+1 )) then
     # print the requested file
     # the first line in $_FFOUND is the path
