@@ -1,3 +1,14 @@
 setopt LOCAL_OPTIONS NULL_GLOB
+# Globbing Flags
+# There are various flags which affect any text to their right up to the end of the enclosing group or to the end of the pattern;
+# they require the EXTENDED_GLOB option. All take the form (#X) where X may have one of the following forms:
+
+# l
+# Lower case characters in the pattern match upper or lower case characters;
+# upper case characters in the pattern still only match upper case characters.
+
+# Glob Qualifiers
+# Patterns used for filename generation may end in a list of qualifiers enclosed in parentheses.
+# The qualifiers specify which filenames that otherwise match the given pattern will be inserted in the argument list.
 _FFOUND=($PWD (#l)**/*$1*(^/))
 fn
