@@ -5,6 +5,7 @@ aliases=(
     d        "$PROJECTS_DIR/jigsaw"
     di       "$PROJECTS_DIR/jigsaw-infra"
     dot      "$DOTFILES_DIR"
+    r        "$PROJECTS_DIR/Reviews"
 )
 
 cd ${aliases[${1:-d}]}
