@@ -2,9 +2,11 @@
 
 local -A aliases
 aliases=(
-    d        "$PROJECTS_DIR/jigsaw"
-    di       "$PROJECTS_DIR/jigsaw-infra"
-    dot      "$DOTFILES_DIR"
+    d        "$PROJECTS_DIR"
+    j        "$PROJECTS_DIR/jigsaw"
+    ji       "$PROJECTS_DIR/jigsaw-infra"
+    jb       "$PROJECTS_DIR/jig-board"
+    df       "$DOTFILES_DIR"
     r        "$PROJECTS_DIR/Reviews"
 )
 
