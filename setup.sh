@@ -131,9 +131,14 @@ install_dotfiles_symlinks () {
     done
 }
 
+run_installers () {
+  find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+}
+
 clone_dotfiles
 # setup_gitconfig
 install_dotfiles_symlinks
+run_installers
 
 # If we are on a mac, lets install and setup homebrew
 #if [ "$(uname -s)" == "Darwin" ]
