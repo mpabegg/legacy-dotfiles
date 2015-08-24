@@ -38,22 +38,6 @@ clone_dotfiles () {
     fi
 }
 
-setup_gitconfig () {
-    if ! [ -f git/gitconfig.symlink ]
-    then
-        info 'setup gitconfig'
-
-        user ' - What is your github author name?'
-        read -e git_authorname
-        user ' - What is your github author email?'
-        read -e git_authoremail
-
-        sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/gitconfig.symlink.example > git/gitconfig.symlink
-
-        success 'gitconfig'
-    fi
-}
-
 copy_file () {
     cp "$1" "$2"
     success "copied $1 to $2"
@@ -136,7 +120,6 @@ run_installers () {
 }
 
 clone_dotfiles
-# setup_gitconfig
 install_dotfiles_symlinks
 run_installers
 
@@ -155,4 +138,3 @@ run_installers
 
 echo ''
 echo '  All installed!'
-
