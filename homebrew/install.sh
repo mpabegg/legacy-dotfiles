@@ -1,8 +1,11 @@
-if test ! $(which brew)
+if [ "$(uname -s)" == "Darwin" ]
 then
-  echo "  Installing Homebrew for you."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+  if test ! $(which brew)
+  then
+    echo "  Installing Homebrew for you."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
 
-brew install caskroom/cask/brew-cask
+  brew install caskroom/cask/brew-cask
+fi
 exit 0
