@@ -3,8 +3,6 @@
 local -A aliases
 aliases=(
     d        "$PROJECTS_DIR"
-    u        "$PROJECTS_DIR/TWU-46"
-    fw       "$PROJECTS_DIR/TWU-46/freewheelers-base"
     df       "$DOTFILES_DIR"
     r        "$PROJECTS_DIR/Reviews"
 )
