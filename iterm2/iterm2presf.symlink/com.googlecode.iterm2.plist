@@ -598,7 +598,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/base16-iterm2</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{965, 636}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -615,9 +615,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>293 372 924 485 0 0 1680 1027 </string>
+	<string>262 419 924 485 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1680 1023 0 0 1680 1027 </string>
+	<string>0 15 1677 1012 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 565 570 451 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -1351,9 +1351,9 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453401665.91861302</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>465902870.39639997</real>
+	<real>469990375.78855002</real>
 	<key>OnlyWhenMoreTabs</key>
-	<true/>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
@@ -1400,9 +1400,9 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/mabegg/iterm2prefs</string>
+	<string>~/iterm2prefs</string>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>RightCommand</key>
@@ -1418,7 +1418,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-07T09:24:37Z</date>
+	<date>2015-11-23T16:44:01Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
