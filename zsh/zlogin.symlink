@@ -19,8 +19,6 @@ fi
 
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH=$(go env GOROOT)/bin:$PATH
-export PATH=$GOPATH/bin:$PATH
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
