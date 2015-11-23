@@ -1,4 +1,5 @@
-if test ! $(which apm)
+if test ! $(which apm) || [ "$(uname -s)" == "Darwin" ]
+then
   brew cask install atom
 fi
 
