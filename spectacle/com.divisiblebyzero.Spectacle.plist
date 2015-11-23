@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BackgroundAlertSuppressed</key>
-	<false/>
+	<true/>
 	<key>HockeySDKAutomaticallySendCrashReports</key>
 	<false/>
 	<key>HockeySDKCrashReportActivated</key>
@@ -168,7 +168,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-11-20T16:58:04Z</date>
+	<date>2015-11-23T19:17:41Z</date>
+	<key>StatusItemEnabled</key>
+	<false/>
 	<key>UndoLastMove</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS

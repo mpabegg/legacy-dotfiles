@@ -3,6 +3,6 @@ then
   brew cask install spectacle
 fi
 
-defaults read com.divisiblebyzero.Spectacle.plist
+defaults import com.divisiblebyzero.Spectacle ./spectacle/com.divisiblebyzero.Spectacle.plist
 
 exit 0
