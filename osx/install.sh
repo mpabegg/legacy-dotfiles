@@ -2,6 +2,8 @@
 
 # ~/.osx — https://mths.be/osx
 
+echo "Setting up Osx Defaults!"
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -682,14 +684,4 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # # Hide the legal disclaimer
 # defaults write org.m0k.transmission WarningLegal -bool false
 
-###############################################################################
-# Kill affected applications                                                  #
-###############################################################################
-
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	"Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	"Transmission" "Tweetbot" "Twitter" "iCal"; do
-	killall "${app}" &> /dev/null
-done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
