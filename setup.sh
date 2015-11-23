@@ -115,12 +115,26 @@ install_dotfiles_symlinks () {
     done
 }
 
+install_homebrew () {
+  if [ "$(uname -s)" == "Darwin" ]
+  then
+    if test ! $(which brew)
+    then
+      echo "  Installing Homebrew for you."
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    brew install caskroom/cask/brew-cask
+  fi
+}
+
 run_installers () {
-  find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+  find . -maxdepth 2 -name install.sh | while read installer ; do sh -c "${installer}" ; done
 }
 
 clone_dotfiles
 install_dotfiles_symlinks
+install_homebrew
 run_installers
 
 # If we are on a mac, lets install and setup homebrew
