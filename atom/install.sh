@@ -3,7 +3,7 @@ then
   brew cask install atom
 fi
 
-apm install --packages-file package-list
+apm install --packages-file atom/package-list
 
 yes yes | apm upgrade
 
