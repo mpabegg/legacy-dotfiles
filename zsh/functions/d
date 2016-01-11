@@ -5,6 +5,7 @@ aliases=(
     d        "$PROJECTS_DIR"
     df       "$DOTFILES_DIR"
     r        "$PROJECTS_DIR/Reviews"
+    u        "$PROJECTS_DIR/TWU-47"
 )
 
 cd ${aliases[${1:-d}]}
