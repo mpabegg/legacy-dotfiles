@@ -1,68 +1,70 @@
 "*":
+  "":
+    slim:
+      text:
+        whitespace:
+          removeTrailingWhitespace: true
+  "atom-ctags":
+    autoBuildTagsWhenActive: true
+    buildTimeout: 60000
+  "atom-material-ui":
+    compactTreeView: true
+    depth: true
+    disableAnimations: true
+    tabSize: "Small"
+    themeSyle: "Lighter"
+  autosave:
+    enabled: true
+  core:
+    disabledPackages: [
+      "symbols-view"
+      "linter-jsxhint"
+      "language-gfm"
+      "vim-mode"
+    ]
+    projectHome: "/Users/mabegg/dev/jigsaw"
+    themes: [
+      "atom-material-ui"
+      "base16-eighties-one-dark"
+    ]
   editor:
+    fontFamily: "Menlo"
+    fontSize: 18
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
     softWrapHangingIndent: 2
     zoomFontWhenCtrlScrolling: true
-    fontSize: 15
-    fontFamily: "Menlo"
-  core:
-    disabledPackages: [
-      "symbols-view"
-      "linter-jsxhint"
-    ]
-    themes: [
-      "atom-material-ui"
-      "base16-eighties-one-dark"
-    ]
-    projectHome: "/Users/mabegg/dev/jigsaw"
+  emmet: {}
   "exception-reporting":
     userId: "2c70e38a-8d85-6bbf-ad01-ba120f54c149"
-  welcome:
-    showOnStartup: false
-  "atom-ctags":
-    autoBuildTagsWhenActive: true
-    buildTimeout: 60000
+  "file-icons": {}
   "language-babel":
     disableWhenNoBabelrcFileInPath: true
     transpileOnSave: false
-  rspec:
-    command: "zeus test"
-  "xml-formatter":
-    xmlUtf8Header: false
-  "one-dark-ui": {}
-  emmet: {}
+  linter: {}
   "linter-jshint":
+    disableWhenNoJshintrcFileInPath: false
     executablePath: "/usr/local/bin/jshint"
     lintInlineJavaScript: false
-    disableWhenNoJshintrcFileInPath: false
-  "linter-ruby":
-    rubyExecutablePath: "/Users/mabegg/.rbenv/shims/ruby"
-  autosave:
-    enabled: true
-  linter: {}
-  "atom-material-ui":
-    compactTreeView: true
-    tabSize: "Small"
-    themeSyle: "Lighter"
-    depth: true
-    disableAnimations: true
-  "file-icons": {}
-  react: {}
-  "":
-    slim:
-      text:
-        whitespace:
-          removeTrailingWhitespace: true
-  "tree-view":
-    showOnRightSide: true
   "linter-rubocop":
     executablePath: "/Users/mabegg/.rbenv/versions/1.9.3-p551/bin/rubocop"
-  "tool-bar": {}
+  "linter-ruby":
+    rubyExecutablePath: "/Users/mabegg/.rbenv/shims/ruby"
+  "one-dark-ui": {}
   "rails-rspec": {}
+  react: {}
+  rspec:
+    command: "zeus test"
   "ruby-test":
     rspecAllCommand: "zeus test"
     rspecFileCommand: "zeus test {relative_path}"
     rspecSingleCommand: "zeus test {relative_path}:{line_number}"
+  "tool-bar": {}
+  "tree-view":
+    showOnRightSide: true
+  welcome:
+    showOnStartup: false
+  "xml-formatter":
+    xmlUtf8Header: false
