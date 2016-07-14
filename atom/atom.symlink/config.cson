@@ -7,12 +7,6 @@
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 60000
-  "atom-material-ui":
-    compactTreeView: true
-    depth: true
-    disableAnimations: true
-    tabSize: "Small"
-    themeSyle: "Lighter"
   autosave:
     enabled: true
   core:
@@ -28,13 +22,15 @@
       "base16-eighties-one-dark"
     ]
   editor:
+    backUpBeforeSaving: true
     fontFamily: "Menlo"
-    fontSize: 18
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
+    softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
+    tabType: "soft"
     zoomFontWhenCtrlScrolling: true
   emmet: {}
   "exception-reporting":
@@ -44,6 +40,8 @@
     disableWhenNoBabelrcFileInPath: true
     transpileOnSave: false
   linter: {}
+  "linter-js-standard":
+    showEslintRules: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: false
     executablePath: "/usr/local/bin/jshint"
@@ -55,16 +53,28 @@
   "one-dark-ui": {}
   "rails-rspec": {}
   react: {}
-  rspec:
-    command: "zeus test"
   "ruby-test":
-    rspecAllCommand: "zeus test"
-    rspecFileCommand: "zeus test {relative_path}"
-    rspecSingleCommand: "zeus test {relative_path}:{line_number}"
+    shell: "zsh"
   "tool-bar": {}
   "tree-view":
+    hideVcsIgnoredFiles: true
     showOnRightSide: true
   welcome:
     showOnStartup: false
   "xml-formatter":
     xmlUtf8Header: false
+".cucumber.rspec.ruby.source.steps":
+  editor:
+    softWrapHangingIndent: 2
+".elixir.html.text":
+  editor:
+    softWrapHangingIndent: 2
+".elixir.source":
+  editor:
+    softWrapHangingIndent: 2
+".elixir.text":
+  editor:
+    softWrapHangingIndent: 2
+".feature.gherkin.text":
+  editor:
+    softWrapHangingIndent: 2
