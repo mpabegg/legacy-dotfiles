@@ -4,10 +4,8 @@ local -A aliases
 aliases=(
     d        "$PROJECTS_DIR"
     df       "$DOTFILES_DIR"
-    r        "$PROJECTS_DIR/Reviews"
-    u        "$PROJECTS_DIR/TWU-47"
-    u2       "$PROJECTS_DIR/TWU-47/twu47proj2"
-    u5       "$PROJECTS_DIR/TWU-47/twu47proj5"
+    mc       "$PROJECTS_DIR/mediacomments"
+    fcc      "$PROJECTS_DIR/freecodecamp"
 )
 
 cd ${aliases[${1:-d}]}
