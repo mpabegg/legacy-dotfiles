@@ -25,10 +25,11 @@
     backUpBeforeSaving: true
     fontFamily: "Menlo"
     invisibles: {}
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
-    softWrapAtPreferredLineLength: true
+    softWrapAtPreferredLineLength: false
     softWrapHangingIndent: 2
     tabType: "soft"
     zoomFontWhenCtrlScrolling: true
@@ -55,8 +56,10 @@
   react: {}
   "ruby-test":
     shell: "zsh"
+  "standard-formatter": {}
   "tool-bar": {}
   "tree-view":
+    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
     showOnRightSide: true
   welcome:
