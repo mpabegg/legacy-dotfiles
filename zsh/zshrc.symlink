@@ -130,6 +130,3 @@ function
 # [[ "$OS" == "Darwin" ]] && export LSCOLORS="exfxcxdxbxegedabagacad"
 
 # source "`brew --prefix`/etc/grc.bashrc"
-
-export NVM_DIR="/Users/mabegg/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
