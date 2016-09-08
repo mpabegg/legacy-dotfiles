@@ -14,7 +14,6 @@
       "symbols-view"
       "linter-jsxhint"
       "language-gfm"
-      "vim-mode"
     ]
     projectHome: "/Users/mabegg/dev/jigsaw"
     themes: [
@@ -56,6 +55,8 @@
   react: {}
   "ruby-test":
     shell: "zsh"
+  script:
+    stopOnRerun: true
   "standard-formatter": {}
   "tool-bar": {}
   "tree-view":
