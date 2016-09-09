@@ -7,7 +7,7 @@ aliases=(
     mc       "$PROJECTS_DIR/mediacomments"
     fcc      "$PROJECTS_DIR/freecodecamp"
     p        "$PROJECTS_DIR/power"
-    pw       "$PROJECTS_DIR/power/nitro-web"
+    nw       "$PROJECTS_DIR/power/nitro-web"
 )
 
 cd ${aliases[${1:-d}]}
