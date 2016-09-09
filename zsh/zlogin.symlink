@@ -20,8 +20,6 @@ fi
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 # Once everything is set up, make a backup of the original PATH
 # Comes in handy when I occasionally mess up my PATH
 export PATH_ORIG=$PATH
