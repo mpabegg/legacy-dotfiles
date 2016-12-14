@@ -1,5 +1,1 @@
-atom/atom.symlink/.*
-atom/atom.symlink/blob-store/
-atom/atom.symlink/compile-cache/
-atom/atom.symlink/packages/
-atom/atom.symlink/storage/
+atom/atom.symlink/*/
