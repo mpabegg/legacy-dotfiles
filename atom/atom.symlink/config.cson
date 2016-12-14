@@ -15,14 +15,15 @@
       "linter-jsxhint"
       "language-gfm"
     ]
+    packagesWithKeymapsDisabled: []
     projectHome: "/Users/mabegg/dev/jigsaw"
+    telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "base16-eighties-one-dark"
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Menlo"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -32,13 +33,18 @@
     softWrapHangingIndent: 2
     tabType: "soft"
     zoomFontWhenCtrlScrolling: true
+  "elm-format": {}
   emmet: {}
   "exception-reporting":
     userId: "2c70e38a-8d85-6bbf-ad01-ba120f54c149"
   "file-icons": {}
+  "highlight-line":
+    enableBackgroundColor: false
   "language-babel":
     disableWhenNoBabelrcFileInPath: true
     transpileOnSave: false
+  "language-elm":
+    elmOraclePath: "/usr/local/bin/elm-oracle"
   linter: {}
   "linter-js-standard":
     showEslintRules: true
@@ -53,18 +59,23 @@
   "one-dark-ui": {}
   "rails-rspec": {}
   react: {}
-  "ruby-test":
-    shell: "zsh"
-  script:
-    stopOnRerun: true
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "source.rb"
+    ]
   "standard-formatter": {}
   "tool-bar": {}
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
     showOnRightSide: true
   welcome:
     showOnStartup: false
+  whitespace: {}
   "xml-formatter":
     xmlUtf8Header: false
 ".cucumber.rspec.ruby.source.steps":
@@ -78,6 +89,10 @@
     softWrapHangingIndent: 2
 ".elixir.text":
   editor:
+    softWrapHangingIndent: 2
+".elm.source":
+  editor:
+    autoIndentOnPaste: true
     softWrapHangingIndent: 2
 ".feature.gherkin.text":
   editor:
