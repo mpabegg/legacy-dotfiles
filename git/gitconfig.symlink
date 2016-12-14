@@ -34,6 +34,8 @@
 
 [push]
 	default = simple
+
 [user]
 	name = Matheus Abegg
 	email = matheus.abegg@gmail.com
+	signingkey = E1706F603FCBBA93
