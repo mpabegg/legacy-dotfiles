@@ -7,13 +7,36 @@
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 60000
+  "atom-material-ui":
+    colors: {}
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      animations: false
   autosave:
     enabled: true
+  "base16-syntax":
+    scheme: "Eighties"
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "symbols-view"
       "linter-jsxhint"
       "language-gfm"
+      "tree-view"
     ]
     packagesWithKeymapsDisabled: []
     projectHome: "/Users/mabegg/dev/jigsaw"
@@ -24,6 +47,7 @@
     ]
   editor:
     backUpBeforeSaving: true
+    fontSize: 13
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -38,8 +62,7 @@
   "exception-reporting":
     userId: "2c70e38a-8d85-6bbf-ad01-ba120f54c149"
   "file-icons": {}
-  "highlight-line":
-    enableBackgroundColor: false
+  "highlight-line": {}
   "language-babel":
     disableWhenNoBabelrcFileInPath: true
     transpileOnSave: false
