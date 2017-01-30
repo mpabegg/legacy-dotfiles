@@ -126,6 +126,12 @@ install_homebrew () {
   fi
 }
 
+setup_zsh () {
+  brew install zsh
+  sudo -- sh -c "echo `which zsh` >> /etc/shells"
+  chsh -s `which zsh`
+}
+
 run_installers () {
   find . -maxdepth 2 -name install.sh | while read installer ; do sh -c "${installer}" ; done
 }
@@ -133,6 +139,7 @@ run_installers () {
 clone_dotfiles
 install_dotfiles_symlinks
 install_homebrew
+setup_zsh
 run_installers
 
 # If we are on a mac, lets install and setup homebrew
@@ -150,3 +157,4 @@ run_installers
 
 echo ''
 echo '  All installed!'
+echo '  Log out for the changes to take effec'
