@@ -157,4 +157,4 @@ run_installers
 
 echo ''
 echo '  All installed!'
-echo '  Log out for the changes to take effec'
+echo '  Log out for the changes to take effect'
