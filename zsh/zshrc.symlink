@@ -131,5 +131,4 @@ function
 
 # source "`brew --prefix`/etc/grc.bashrc"
 
-export NVM_DIR="/Users/matheusabegg/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source $(brew --prefix nvm)/nvm.sh
