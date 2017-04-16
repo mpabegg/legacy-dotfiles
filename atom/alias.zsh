@@ -1,1 +1,1 @@
-alias apm-bare-list= apm list -i -b | sed s/\@.*//
+alias apm-bare-list="apm list -i -b | sed s/\@.*//"
