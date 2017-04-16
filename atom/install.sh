@@ -5,6 +5,4 @@ fi
 
 apm install --packages-file atom/package-list
 
-yes yes | apm upgrade
-
 exit 0
