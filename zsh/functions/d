@@ -4,10 +4,10 @@ local -A aliases
 aliases=(
     d        "$PROJECTS_DIR"
     df       "$DOTFILES_DIR"
-    mc       "$PROJECTS_DIR/mediacomments"
-    fcc      "$PROJECTS_DIR/freecodecamp"
     p        "$PROJECTS_DIR/power"
     nw       "$PROJECTS_DIR/power/nitro-web"
+    db       "$HOME/Dropbox"
+    sbl      "$HOME/Dropbox/Bass Archives/ScottBassLessons"
 )
 
 cd ${aliases[${1:-d}]}
