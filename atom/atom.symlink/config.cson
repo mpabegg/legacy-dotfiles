@@ -46,7 +46,7 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontSize: 13
+    fontFamily: "Iosevka"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
