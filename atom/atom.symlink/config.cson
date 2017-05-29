@@ -46,7 +46,7 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Iosevka"
+    fontFamily: "Fira Code"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
