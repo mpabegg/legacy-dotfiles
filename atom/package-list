@@ -10,7 +10,6 @@ emmet
 highlight-line
 language-batch
 language-elm
-language-groovy
 linter
 linter-eslint
 markdown-writer
