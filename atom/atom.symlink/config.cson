@@ -46,7 +46,7 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Fira Code"
+    fontFamily: "Menlo"
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
