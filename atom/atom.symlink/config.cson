@@ -36,6 +36,7 @@
       "symbols-view"
       "linter-jsxhint"
       "language-gfm"
+      "github"
     ]
     packagesWithKeymapsDisabled: []
     projectHome: "/Users/mabegg/dev/jigsaw"
