@@ -25,3 +25,5 @@
 # https://github.com/bevry/cson#what-is-cson
 'atom-text-editor':
   'ctrl-cmd-.': 'rails-rspec:toggle-spec-file'
+  'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
