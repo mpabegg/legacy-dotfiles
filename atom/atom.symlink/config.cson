@@ -81,6 +81,21 @@
   "linter-ruby":
     rubyExecutablePath: "/Users/mabegg/.rbenv/shims/ruby"
   "one-dark-ui": {}
+  parinfer:
+    "file-extensions": [
+      ".boot"
+      ".cl"
+      ".clj"
+      ".cljc"
+      ".cljs"
+      ".edn"
+      ".el"
+      ".lfe"
+      ".lisp"
+      ".lsp"
+      ".rkt"
+      ".scm"
+    ]
   "rails-rspec": {}
   react: {}
   "spell-check":
