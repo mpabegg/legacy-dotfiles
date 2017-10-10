@@ -47,8 +47,9 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Menlo"
+    fontFamily: "Input Mono"
     invisibles: {}
+    preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
