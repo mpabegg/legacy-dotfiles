@@ -70,6 +70,8 @@
   "language-elm":
     elmOraclePath: "/usr/local/bin/elm-oracle"
   linter: {}
+  "linter-eslint":
+    fixOnSave: true
   "linter-js-standard":
     showEslintRules: true
   "linter-jshint":
@@ -112,6 +114,8 @@
   "tree-view":
     hideIgnoredNames: true
     showOnRightSide: true
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
   welcome:
     showOnStartup: false
   whitespace: {}
