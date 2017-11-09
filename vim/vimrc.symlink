@@ -4,3 +4,5 @@ filetype plugin on
 syntax on
 set ts=2
 set hlsearch
+
+set path+=**
