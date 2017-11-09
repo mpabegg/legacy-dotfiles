@@ -3,5 +3,6 @@
 .tags*
 .DS_Store
 .env*
+.#*
 public/bundle.js
 public/bundle.js*
