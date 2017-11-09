@@ -27,3 +27,5 @@
   'ctrl-cmd-.': 'rails-rspec:toggle-spec-file'
   'ctrl-j': 'core:move-down'
   'ctrl-k': 'core:move-up'
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-h': 'window:focus-pane-on-left'
