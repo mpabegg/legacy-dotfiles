@@ -3,6 +3,6 @@ then
   brew cask install atom
 fi
 
-apm install --packages-file atom/package-list
+apm install proton-mode
 
 exit 0
