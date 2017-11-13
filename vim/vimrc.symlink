@@ -6,3 +6,5 @@ set ts=2
 set hlsearch
 
 set path+=**
+
+set wildmenu
