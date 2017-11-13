@@ -64,6 +64,8 @@
     :language-racket
     :proton-light
     :proton-framer
+    :organized
+    :tool-bar
   ]
 
   ;; Packages that you want to disable.
@@ -114,6 +116,9 @@
     ["linter-clojure.javaExecutablePath" "/usr/bin/java"]
 
     ["ruby-linter.rubyExecutablePath" "~/.rbenv/shims/ruby"]
+
+    ["tool-bar.position" "Left"]
+    ["organized.sidebarVisible" true]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
