@@ -1,16 +1,8 @@
 if [ "$(uname -s)" == "Darwin" ]
 then
-  brew cask install karabiner
-
-  cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
-
-  $cli set repeat.wait 53
-  /bin/echo -n .
-  $cli set repeat.initial_wait 300
-  /bin/echo -n .
-  $cli set remap.controlL2controlL_escape 1
-  /bin/echo -n .
-  /bin/echo
+  brew cask install karabiner-elements
 fi
+
+ln -s "$(pwd)/karabiner/config/karabiner/" ~/.config
 
 exit 0
