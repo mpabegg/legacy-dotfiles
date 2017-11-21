@@ -116,6 +116,8 @@
     ["linter-clojure.javaExecutablePath" "/usr/bin/java"]
 
     ["ruby-linter.rubyExecutablePath" "~/.rbenv/shims/ruby"]
+    ["autocomplete-ruby.rsensePath" "~/.rbenv/shims/rsense"]
+    ["rubocop-auto-correct.rubocopCommandPath" "~/.rbenv/shims/rubocop"]
 
     ["tool-bar.position" "Left"]
     ["organized.sidebarVisible" true]
