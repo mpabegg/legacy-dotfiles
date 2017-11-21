@@ -19,10 +19,11 @@
     ;; Get more at github.com/dvcrn/proton/tree/master/src/cljs/proton/layers/tools
     ;; -----------------------------------
     :tools/git
-    :tools/linter
+    ;; :tools/linter
     ;; :tools/bookmarks
     ;; :tools/build
     ;; :tools/minimap
+    ;; :tools/terminal
 
 
     ;; -----------------------------------
@@ -38,7 +39,6 @@
     ;; :lang/markdown
     ;; :lang/rust
     :lang/javascript
-    :lang/ruby
 
     ;; -----------------------------------
     ;; Frameworks
@@ -61,11 +61,13 @@
     :pigments
     :set-syntax
 	  :base16-eighties-one-dark
+    :base16-ocean-light-syntax
     :language-racket
     :proton-light
     :proton-framer
     :organized
     :tool-bar
+    :parinfer
   ]
 
   ;; Packages that you want to disable.
@@ -108,19 +110,15 @@
 
     ["theme-switch.profiles"
       ["atom-material-ui base16-eighties-one-dark"
-       "proton-light proton-framer"]]
+       "atom-material-ui base16-ocean-light-syntax"]]
 
     ["vim-mode-plus.notifiedCoffeeScriptNoLongerSupportedToExtendVMP" true]
 
     ["linter-clojure.clojureExecutablePath" "/usr/local/bin/clojure"]
     ["linter-clojure.javaExecutablePath" "/usr/bin/java"]
 
-    ["ruby-linter.rubyExecutablePath" "~/.rbenv/shims/ruby"]
-    ["autocomplete-ruby.rsensePath" "~/.rbenv/shims/rsense"]
-    ["rubocop-auto-correct.rubocopCommandPath" "~/.rbenv/shims/rubocop"]
-
     ["tool-bar.position" "Left"]
-    ["organized.sidebarVisible" true]
+    ["organized.sidebarVisible" false]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
