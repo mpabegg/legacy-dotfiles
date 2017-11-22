@@ -129,7 +129,8 @@
   ;; :keybindings {:z {:category "foo-category"
   ;;                   :y {:title "execute hello"
   ;;                       :action "hello"}}}
-  :keybindings {}
+  :keybindings { :slash {:action "project-find:show"
+                         :title "search in files"}}
 
   ;; Want some custom behavior inside a certain window?
   ;; Add your own nifty things here!
