@@ -18,7 +18,7 @@
     ;; tools
     ;; Get more at github.com/dvcrn/proton/tree/master/src/cljs/proton/layers/tools
     ;; -----------------------------------
-    :tools/git
+    ;; :tools/git
     ;; :tools/linter
     ;; :tools/bookmarks
     ;; :tools/build
@@ -38,7 +38,7 @@
     ;; :lang/elixir
     ;; :lang/markdown
     ;; :lang/rust
-    :lang/javascript
+    :lang/javascript]
 
     ;; -----------------------------------
     ;; Frameworks
@@ -51,7 +51,7 @@
     ;; Get more at github.com/dvcrn/proton/tree/master/src/cljs/proton/layers/fun
     ;; -----------------------------------
     ;; :fun/power_mode
-  ]
+
 
   ;; Packages that are not part of a layer. List them here as keyword
   ;; All packages will be ensured to be installed. Stuff that is not listed here
@@ -60,25 +60,25 @@
   [
     :pigments
     :set-syntax
-	  :base16-eighties-one-dark
+    :base16-eighties-one-dark
     :base16-ocean-light-syntax
     :language-racket
     :proton-light
     :proton-framer
     :organized
     :tool-bar
-    :parinfer
-  ]
+    :parinfer]
+
 
   ;; Packages that you want to disable.
   ;; Note that packages will be removed except bundled packages.
   ;; Bundled packages will be disabled instead.
   ;; Use this configuration instead of atom's `core.disabledPackages`
-  :disabled-packages [
+  :disabled-packages []
     ;; :autoupdate-packages
-    ;; :about
-    ;; :welcome
-  ]
+    :about
+    :welcome
+
   ;; Proton takes over your atom configuration. All settings that are not listed here will get wiped
   ;; Configurations are denoted as 2 element vector consisting of k/v
   ;; sub-vectors inside v will get treated like javascript arrays
@@ -101,25 +101,25 @@
     ;; prefer classic vim mode over vim-mode-plus? Change this to :vim-mode
     ["proton.core.inputProvider" :vim-mode-plus]
 
-		["autosave.enabled" true]
-    ["editor.softWrap" false]
+    ["autosave.enabled" true
+      ["editor.softWrap" false]
 
-    ["atom-material-ui.tabs.compactTabs" true]
-    ["atom-material-ui.ui.panelContrast" true]
-    ["atom-material-ui.ui.panelShadows" true]
+      ["atom-material-ui.tabs.compactTabs" true]
+      ["atom-material-ui.ui.panelContrast" true]
+      ["atom-material-ui.ui.panelShadows" true]
 
-    ["theme-switch.profiles"
-      ["atom-material-ui base16-eighties-one-dark"
-       "atom-material-ui base16-ocean-light-syntax"]]
+      ["theme-switch.profiles"
+        ["atom-material-ui base16-eighties-one-dark"
+         "atom-material-ui base16-ocean-light-syntax"]]
 
-    ["vim-mode-plus.notifiedCoffeeScriptNoLongerSupportedToExtendVMP" true]
+      ["vim-mode-plus.notifiedCoffeeScriptNoLongerSupportedToExtendVMP" true]
 
-    ["linter-clojure.clojureExecutablePath" "/usr/local/bin/clojure"]
-    ["linter-clojure.javaExecutablePath" "/usr/bin/java"]
+      ["linter-clojure.clojureExecutablePath" "/usr/local/bin/clojure"]
+      ["linter-clojure.javaExecutablePath" "/usr/bin/java"]
 
-    ["tool-bar.position" "Left"]
-    ["organized.sidebarVisible" false]
-  ]
+      ["tool-bar.position" "Left"]
+      ["organized.sidebarVisible" false]]]
+
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
   ;; The following example adds a category `foo-category` under <SPC>z
@@ -129,14 +129,13 @@
   ;; :keybindings {:z {:category "foo-category"
   ;;                   :y {:title "execute hello"
   ;;                       :action "hello"}}}
-  :keybindings {}
+  :keybindings { :slash {:action "project-find:show"
+                         :title "search in files"}}
 
   ;; Want some custom behavior inside a certain window?
   ;; Add your own nifty things here!
   :keymaps [{:selector ".tree-view" :keymap [["escape" "tree-view:toggle"]]}
             ;; Want to rebind ESC to something else? You can do that here.
             ;; If you are good with esc, just remove the following line.
-            {:selector "atom-text-editor.vim-mode-plus:not(.normal-mode)" :keymap [["f d" "vim-mode-plus:activate-normal-mode"]]}
+            {:selector "atom-text-editor.vim-mode-plus:not(.normal-mode)" :keymap [["f d" "vim-mode-plus:activate-normal-mode"]]}]}
             ;; {:selector "atom-text-editor.vim-mode:not(.normal-mode)" :keymap [["f d" "vim-mode:activate-normal-mode"]]}
-  ]
-}
