@@ -82,6 +82,8 @@
     executablePath: "/Users/mabegg/.rbenv/versions/1.9.3-p551/bin/rubocop"
   "linter-ruby":
     rubyExecutablePath: "/Users/mabegg/.rbenv/shims/ruby"
+  "linter-ui-default":
+    panelHeight: 322
   "one-dark-ui": {}
   parinfer:
     "file-extensions": [
@@ -114,8 +116,7 @@
   "tree-view":
     hideIgnoredNames: true
     showOnRightSide: true
-  "vim-mode-plus":
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+  "vim-mode-plus": {}
   welcome:
     showOnStartup: false
   whitespace: {}
