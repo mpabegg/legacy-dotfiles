@@ -23,7 +23,7 @@
     ;; :tools/bookmarks
     ;; :tools/build
     ;; :tools/minimap
-    ;; :tools/terminal
+    :tools/terminal
 
 
     ;; -----------------------------------
@@ -62,11 +62,6 @@
     :set-syntax
 	  :base16-eighties-one-dark
     :base16-ocean-light-syntax
-    :language-racket
-    :proton-light
-    :proton-framer
-    :organized
-    :tool-bar
     :parinfer
   ]
 
@@ -85,7 +80,8 @@
   :configuration
   [
     ;; appearance
-    ["editor.fontFamily" "Hack"]
+    ["editor.fontFamily" "Menlo"]
+    ["editor.showInvisibles" true]
 
     ;; the current default theme
     ;; ["core.themes" ["nucleus-dark-ui" "atom-dark-fusion-syntax"]]
@@ -93,6 +89,8 @@
     ;; ["core.themes" ["atom-material-ui" "atom-material-syntax"]
     ["core.themes" ["atom-material-ui" "base16-eighties-one-dark"]]
     ;; ["core.themes" ["one-dark-ui" "one-dark-syntax"]]
+
+    ["core.titleBar" "custom"]
 
     ;; proton configuration
     ["proton.core.showTabBar" true]
@@ -107,18 +105,20 @@
     ["atom-material-ui.tabs.compactTabs" true]
     ["atom-material-ui.ui.panelContrast" true]
     ["atom-material-ui.ui.panelShadows" true]
+    ["atom-material-ui.colors.abaseColor" "#607d8b"]
+    ["atom-material-ui.colors.predefinedColor" "Blue Grey"]
+    ["atom-material-ui.colors.genAccent" true]
 
     ["theme-switch.profiles"
       ["atom-material-ui base16-eighties-one-dark"
-       "atom-material-ui base16-ocean-light-syntax"]]
+       "atom-material-ui solarized-light-syntax"]]
 
     ["vim-mode-plus.notifiedCoffeeScriptNoLongerSupportedToExtendVMP" true]
 
     ["linter-clojure.clojureExecutablePath" "/usr/local/bin/clojure"]
     ["linter-clojure.javaExecutablePath" "/usr/bin/java"]
 
-    ["tool-bar.position" "Left"]
-    ["organized.sidebarVisible" false]
+    ["highlight-line.hideHighlightOnSelect" true]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
