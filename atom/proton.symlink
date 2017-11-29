@@ -39,6 +39,7 @@
     ;; :lang/markdown
     ;; :lang/rust
     :lang/javascript
+    :lang/ruby
 
     ;; -----------------------------------
     ;; Frameworks
@@ -70,6 +71,7 @@
   ;; Bundled packages will be disabled instead.
   ;; Use this configuration instead of atom's `core.disabledPackages`
   :disabled-packages [
+    :autocomplete-ruby
     ;; :autoupdate-packages
     ;; :about
     ;; :welcome
@@ -136,6 +138,8 @@
     ["platformio-ide-terminal.ansiColors.zBright.brightRed" "#f2777a"]
     ["platformio-ide-terminal.ansiColors.zBright.brightWhite" "#f2f0ec"]
     ["platformio-ide-terminal.ansiColors.zBright.brightYellow" "#ffcc66"]
+    ["platformio-ide-terminal.style.animationSpeed" 5]
+    ["platformio-ide-terminal.style.defaultPanelHeight" "100%"]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
