@@ -18,12 +18,12 @@
     ;; tools
     ;; Get more at github.com/dvcrn/proton/tree/master/src/cljs/proton/layers/tools
     ;; -----------------------------------
-    :tools/git
+    ;; :tools/git
     ;; :tools/linter
     ;; :tools/bookmarks
     ;; :tools/build
     ;; :tools/minimap
-    :tools/terminal
+    ;; :tools/terminal
 
 
     ;; -----------------------------------
@@ -65,6 +65,7 @@
     :base16-ocean-light-syntax
     :parinfer
     :atom-elixir-formatter
+  :language-terraform
   ]
 
   ;; Packages that you want to disable.
@@ -120,25 +121,6 @@
     ["linter-clojure.javaExecutablePath" "/usr/bin/java"]
 
     ["highlight-line.hideHighlightOnSelect" true]
-
-    ["platformio-ide-terminal.ansiColors.normal.black" "#2d2d2d"]
-    ["platformio-ide-terminal.ansiColors.normal.blue" "#6699cc"]
-    ["platformio-ide-terminal.ansiColors.normal.cyan" "#66cccc"]
-    ["platformio-ide-terminal.ansiColors.normal.green" "#99cc99"]
-    ["platformio-ide-terminal.ansiColors.normal.magenta" "#cc99cc"]
-    ["platformio-ide-terminal.ansiColors.normal.red" "#f2777a"]
-    ["platformio-ide-terminal.ansiColors.normal.white" "#f2f0ec"]
-    ["platformio-ide-terminal.ansiColors.normal.yellow" "#ffcc66"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightBlack" "#2d2d2d"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightBlue" "#6699cc"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightCyan" "#66cccc"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightGreen" "#99cc99"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightMagenta" "#cc99cc"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightRed" "#f2777a"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightWhite" "#f2f0ec"]
-    ["platformio-ide-terminal.ansiColors.zBright.brightYellow" "#ffcc66"]
-    ["platformio-ide-terminal.style.animationSpeed" 5]
-    ["platformio-ide-terminal.style.defaultPanelHeight" "100%"]
   ]
 
   ;; Don't like a keybinding or want to add something yourself? Do it here
