@@ -46,14 +46,20 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     git
      markdown
      org
      spell-checking
      syntax-checking
      osx
-     )
-   ;; List of additional packages that will be installed without being
+     gtags
+     git
+     (version-control :variables
+                      version-control-global-margin t
+                      version-control-diff-tool 'diff-hl
+                      version-control-diff-side 'left)
+     parinfer)
+
+   ;; List of additional packages that will b  installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
@@ -137,7 +143,7 @@ values."
    dotspacemacs-themes (if (display-graphic-p)
                            '(base16-eighties
                              base16-solarized-light)
-                         '(spacemacs-dark
+                         '(base16-solarized-dark
                            base16-solarized-light))
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -318,6 +324,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (interactive)
   (save-some-buffers t))
 
+(defun mpabegg/eslint-fix-file ()
+  (interactive)
+  (shell-command (concat "eslint --fix " (buffer-file-name)))
+  (revert-buffer t t))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -325,9 +336,15 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
- (setq powerline-default-separator 'utf-8)
- (add-hook 'focus-out-hook 'mpabegg/save-all-buffers)
-  )
+  (setq powerline-default-separator nil)
+  (add-hook 'focus-out-hook 'mpabegg/save-all-buffers)
+  (setq standard-indent 2)
+  (setq truncate-lines t)
+  (spacemacs/declare-prefix-for-mode 'js2-mode
+    "ml" "linting")
+  (spacemacs/set-leader-keys-for-major-mode 'js2-mode
+    "lf" 'mpabegg/eslint-fix-file)
+  (setq neo-theme 'arrow))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
