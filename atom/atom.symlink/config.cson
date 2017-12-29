@@ -1,0 +1,102 @@
+"*":
+  "atom-material-ui":
+    colors:
+      abaseColor: "#607d8b"
+      genAccent: true
+      predefinedColor: "Blue Grey"
+    tabs:
+      compactTabs: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  autosave:
+    enabled: true
+  "autoupdate-packages":
+    handling: "Update automatically and silently"
+    lastUpdateTimestamp: 1514128466293
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "base16-eighties-one-dark"
+    ]
+  "easy-motion-redux":
+    replaceCharacters: "abcdefghijklmnopqrstuvwxyz"
+  editor:
+    fontFamily: "Menlo"
+    showInvisibles: true
+  "exception-reporting": {}
+  "highlight-line":
+    hideHighlightOnSelect: true
+  "linter-clojure":
+    clojureExecutablePath: "/usr/local/bin/clojure"
+    javaExecutablePath: "/usr/bin/java"
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        black: "#2d2d2d"
+        blue: "#6699cc"
+        cyan: "#66cccc"
+        green: "#99cc99"
+        magenta: "#cc99cc"
+        red: "#f2777a"
+        white: "#f2f0ec"
+        yellow: "#ffcc66"
+      zBright:
+        brightBlack: "#2d2d2d"
+        brightBlue: "#6699cc"
+        brightCyan: "#66cccc"
+        brightGreen: "#99cc99"
+        brightMagenta: "#cc99cc"
+        brightRed: "#f2777a"
+        brightWhite: "#f2f0ec"
+        brightYellow: "#ffcc66"
+    style:
+      animationSpeed: 5
+      defaultPanelHeight: "100%"
+  proton:
+    core:
+      alwaysShowWelcomeScreen: true
+      inputProvider: "vim-mode-plus"
+      leaderKey: "space"
+      modeKey: ","
+      "post-init-timeout": 3000
+      quickOpenProvider: "normal"
+      relativeLineNumbers: true
+      selectedLayers: [
+        "core"
+        "tools/git"
+        "tools/terminal"
+        "lang/elixir"
+        "lang/markdown"
+        "lang/javascript"
+        "lang/ruby"
+      ]
+      showTabBar: true
+      whichKeyDelay: 0.4
+      whichKeyDelayOnInit: false
+      whichKeyDisabled: false
+      wipeUserConfigs: true
+    lang:
+      javascript:
+        linter: "eslint"
+  "ruby-linter":
+    rubyExecutablePath: "/usr/bin/ruby"
+  "ruby-rubocop":
+    executablePath: null
+  "theme-switch":
+    profiles: [
+      "atom-material-ui base16-eighties-one-dark"
+      "atom-material-ui solarized-light-syntax"
+    ]
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
+  zentabs:
+    maximumOpenedTabs: 10
+    neverCloseUnsaved: true
