@@ -13,8 +13,16 @@
     enabled: true
   "autoupdate-packages":
     handling: "Update automatically and silently"
-    lastUpdateTimestamp: 1514128466293
+    lastUpdateTimestamp: 1514897907030
   core:
+    disabledPackages: [
+      "react"
+      "docblockr"
+      "javascript-snippets"
+      "react-snippets"
+      "autocomplete-modules"
+      "atom-ternjs"
+    ]
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
@@ -31,29 +39,7 @@
   "linter-clojure":
     clojureExecutablePath: "/usr/local/bin/clojure"
     javaExecutablePath: "/usr/bin/java"
-  "platformio-ide-terminal":
-    ansiColors:
-      normal:
-        black: "#2d2d2d"
-        blue: "#6699cc"
-        cyan: "#66cccc"
-        green: "#99cc99"
-        magenta: "#cc99cc"
-        red: "#f2777a"
-        white: "#f2f0ec"
-        yellow: "#ffcc66"
-      zBright:
-        brightBlack: "#2d2d2d"
-        brightBlue: "#6699cc"
-        brightCyan: "#66cccc"
-        brightGreen: "#99cc99"
-        brightMagenta: "#cc99cc"
-        brightRed: "#f2777a"
-        brightWhite: "#f2f0ec"
-        brightYellow: "#ffcc66"
-    style:
-      animationSpeed: 5
-      defaultPanelHeight: "100%"
+  "platformio-ide-terminal": {}
   proton:
     core:
       alwaysShowWelcomeScreen: true
@@ -65,11 +51,8 @@
       relativeLineNumbers: true
       selectedLayers: [
         "core"
-        "tools/git"
-        "tools/terminal"
         "lang/elixir"
         "lang/markdown"
-        "lang/javascript"
         "lang/ruby"
       ]
       showTabBar: true
@@ -77,9 +60,6 @@
       whichKeyDelayOnInit: false
       whichKeyDisabled: false
       wipeUserConfigs: true
-    lang:
-      javascript:
-        linter: "eslint"
   "ruby-linter":
     rubyExecutablePath: "/usr/bin/ruby"
   "ruby-rubocop":

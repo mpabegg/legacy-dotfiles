@@ -1,3 +1,4 @@
+;; -*- mode: clojure -*-
 {
   ;; This is your main proton configuration file
   ;; While using proton, all atom related configuration has to go inside here
@@ -38,7 +39,7 @@
     :lang/elixir
     :lang/markdown
     ;; :lang/rust
-    :lang/javascript
+    ;; :lang/javascript
     :lang/ruby
 
     ;; -----------------------------------
@@ -65,7 +66,9 @@
     :base16-ocean-light-syntax
     :parinfer
     :atom-elixir-formatter
-  :language-terraform
+    :language-terraform
+    :atom-ide-ui
+    :ide-typescript
   ]
 
   ;; Packages that you want to disable.
@@ -136,10 +139,11 @@
 
   ;; Want some custom behavior inside a certain window?
   ;; Add your own nifty things here!
-  :keymaps [{:selector ".tree-view" :keymap [["escape" "tree-view:toggle"]]}
-            ;; Want to rebind ESC to something else? You can do that here.
-            ;; If you are good with esc, just remove the following line.
-            {:selector "atom-text-editor.vim-mode-plus:not(.normal-mode)" :keymap [["f d" "vim-mode-plus:activate-normal-mode"]]}
-            ;; {:selector "atom-text-editor.vim-mode:not(.normal-mode)" :keymap [["f d" "vim-mode:activate-normal-mode"]]}
+  :keymaps [
+    {:selector ".tree-view" :keymap [["escape" "tree-view:toggle"]]}
+  ;; Want to rebind ESC to something else? You can do that here.
+  ;; If you are good with esc, just remove the following line.
+  ;; {:selector "atom-text-editor.vim-mode-plus:not(.normal-mode)" :keymap [["f d" "vim-mode-plus:activate-normal-mode"]]}
+  ;; {:selector "atom-text-editor.vim-mode:not(.normal-mode)" :keymap [["f d" "vim-mode:activate-normal-mode"]]}
   ]
 }
