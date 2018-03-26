@@ -3,6 +3,7 @@ then
   brew cask install karabiner-elements
 fi
 
-cp "$(pwd)/karabiner/config/karabiner/" ~/.config
+cp -R "$(pwd)/karabiner/config/karabiner/" ~/.config
 
 exit 0
+case
