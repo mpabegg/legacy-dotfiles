@@ -69,6 +69,10 @@
     :language-terraform
     :atom-ide-ui
     :ide-typescript
+    :xml-formatter
+    :pretty-json
+    :split-diff
+    :bracket-colorizer
   ]
 
   ;; Packages that you want to disable.
@@ -99,7 +103,7 @@
 
     ;; proton configuration
     ["proton.core.showTabBar" true]
-    ["proton.core.relativeLineNumbers" true]
+    ["proton.core.relativeLineNumbers" false]
 
     ;; prefer classic vim mode over vim-mode-plus? Change this to :vim-mode
     ["proton.core.inputProvider" :vim-mode-plus]
@@ -140,7 +144,6 @@
   ;; Want some custom behavior inside a certain window?
   ;; Add your own nifty things here!
   :keymaps [
-    {:selector ".tree-view" :keymap [["escape" "tree-view:toggle"]]}
   ;; Want to rebind ESC to something else? You can do that here.
   ;; If you are good with esc, just remove the following line.
   ;; {:selector "atom-text-editor.vim-mode-plus:not(.normal-mode)" :keymap [["f d" "vim-mode-plus:activate-normal-mode"]]}

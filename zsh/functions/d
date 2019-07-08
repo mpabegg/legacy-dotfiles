@@ -4,7 +4,7 @@ local -A aliases
 aliases=(
     d        "$PROJECTS_DIR"
     df       "$DOTFILES_DIR"
-    b        "/Volumes/Projects/Babbel"
+    b        "$PROJECTS_DIR/jobz_backend"
     db       "$HOME/Dropbox"
     sbl      "$HOME/Dropbox/Bass Archives/ScottBassLessons"
 )

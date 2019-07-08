@@ -13,7 +13,7 @@
     enabled: true
   "autoupdate-packages":
     handling: "Update automatically and silently"
-    lastUpdateTimestamp: 1514897907030
+    lastUpdateTimestamp: 1557301323738
   core:
     disabledPackages: [
       "react"
@@ -22,6 +22,7 @@
       "react-snippets"
       "autocomplete-modules"
       "atom-ternjs"
+      "relative-numbers"
     ]
     telemetryConsent: "no"
     themes: [
@@ -48,7 +49,7 @@
       modeKey: ","
       "post-init-timeout": 3000
       quickOpenProvider: "normal"
-      relativeLineNumbers: true
+      relativeLineNumbers: false
       selectedLayers: [
         "core"
         "lang/elixir"
